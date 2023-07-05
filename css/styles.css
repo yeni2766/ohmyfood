@@ -1,0 +1,65 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  nav .logo {
+    width: 50%;
+  }
+  nav .nav-section {
+    display: flex;
+    flex-direction: column;
+  }
+  nav .nav-section.location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAEAEA;
+    width: 100%;
+    height: 50px;
+    border-top: 5px solid #cfcfcf;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
+  nav .nav-section.location span {
+    text-align: center;
+  }
+  nav .nav-section.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 5px;
+  }
+  nav .nav-section.logo {
+    text-align: center;
+  }
+  nav .fa-map-marker-alt {
+    margin-right: 30px;
+  }
+  nav .area {
+    margin-right: 30px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Styles for tablets */
+}/*# sourceMappingURL=styles.css.map */
