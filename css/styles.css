@@ -104,7 +104,7 @@ body {
   }
   #instructions h2 {
     font-family: "Roboto", sans-serif;
-    margin-left: 32px;
+    margin-left: 20px;
     margin-bottom: 40px;
   }
   #instructions .card-wrapper {
@@ -153,6 +153,110 @@ body {
   }
   #instructions .fa-store {
     color: #9356DC;
+  }
+  #restaurants {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    padding-top: 50px;
+    margin-top: 50px;
+  }
+  #restaurants h2 {
+    font-family: "Roboto", sans-serif;
+    margin-left: 20px;
+  }
+  #restaurants .restaurant-card-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 20px;
+    margin-bottom: 70px;
+  }
+  #restaurants .restaurant-cards {
+    position: relative;
+    height: 260px;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 20px;
+  }
+  #restaurants .new {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    background-color: #99e2d0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-family: "Roboto", sans-serif;
+    color: #0a8d6d;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  #restaurants .restaurant-cards img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    height: 70%;
+  }
+  #restaurants .title {
+    padding-left: 20px;
+    position: relative;
+    bottom: 5px;
+  }
+  #restaurants h3 {
+    font-family: "Roboto", sans-serif;
+  }
+  #restaurants .title p {
+    position: relative;
+    bottom: 17px;
+    font-family: "Roboto", sans-serif;
+  }
+  footer {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: #353535;
+    display: flex;
+    flex-direction: column;
+  }
+  footer h4 {
+    font-family: "Shrikhand", cursive;
+    color: white;
+  }
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    bottom: 20px;
+  }
+  footer a {
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto", sans-serif;
+  }
+  footer li {
+    margin-top: 5px;
+  }
+  footer .link-icon {
+    position: relative;
+    left: 20px;
+  }
+  footer i {
+    color: white;
+  }
+  footer .fa-hands-helping {
+    font-size: 11px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {

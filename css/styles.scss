@@ -17,8 +17,12 @@ $lightfont:100;
 $buttonshadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 $iconsmarginright:30px;
 $iconsize:20px;
-
-
+$imgheight:70%;
+$imgwidth:100%;
+$borderimage: 15px 15px 0px 0px;
+$newbuttoncolor:#99e2d0;
+$newbuttontitlecolor:#0a8d6d;
+$logofont:'Shrikhand', cursive;
 
 
 body {
@@ -140,7 +144,7 @@ overflow-x: hidden;
      
       h2{
         font-family: $myfont;
-        margin-left: 32px;
+        margin-left: 20px;
         margin-bottom: 40px;
       }
 
@@ -192,11 +196,133 @@ overflow-x: hidden;
      .fa-store{
       color: $primary;
      }
-
-
      
     }
   
+  
+    #restaurants{
+      width:100%;
+      height:100%;
+      box-sizing: border-box;
+      display:flex;
+      flex-direction: column;
+      background-color: $grey;
+      padding-top: 50px;
+      margin-top: 50px;
+      
+      
+      h2{
+        font-family: $myfont;
+        margin-left: 20px;
+      }
+
+  .restaurant-card-wrapper{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+position: relative;
+bottom:20px;
+margin-bottom:70px;
+  }
+  
+
+      .restaurant-cards{
+        position: relative;
+        height:260px;
+        width:90%;
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: $buttonshadow;
+        margin-top: 20px;
+      }
+
+      .new{
+        position: absolute;
+        top:30px;
+        right:15px;
+        background-color: $newbuttoncolor;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-family: $myfont;
+        color:$newbuttontitlecolor;
+        box-shadow: $buttonshadow;
+
+      }
+
+    .restaurant-cards img{
+      object-fit: cover;
+      width:$imgwidth;
+      border-radius: $borderimage;
+      height: $imgheight;
+    }
+
+.title{
+  padding-left:20px;
+  position: relative;
+  bottom:5px;
+}
+h3{
+  font-family: $myfont;
+}
+.title p{
+  position: relative;
+  bottom:17px;
+  font-family: $myfont;
+
+}
+
+
+    }
+
+    footer{
+      width:100%;
+      height:100%;
+      box-sizing: border-box;
+      padding-left:20px;
+      padding-top:20px;
+      background-color: #353535;
+      display: flex;
+      flex-direction: column;
+
+      h4{
+        font-family: $logofont;
+        color:white;
+      }
+
+      ul{
+        list-style-type: none;
+        padding: 0;
+        position:relative;
+        bottom:20px;
+      }
+
+     a{
+      text-decoration: none;
+      color:white;
+      font-family: $myfont;
+     }
+
+     li{
+      margin-top: 5px;
+     }
+     .link-icon{
+      position: relative;
+      left:20px;
+     }
+
+     i{
+      color:white;
+     }
+     .fa-hands-helping{
+      font-size: 11px;
+     }
+    }
+
+
 
 }
 
