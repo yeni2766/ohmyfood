@@ -5,6 +5,16 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(120%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
 @media screen and (max-width: 767px) {
   html,
   body {
@@ -213,6 +223,32 @@ body {
     position: relative;
     bottom: 5px;
   }
+  #restaurants .title .heart-icon.far {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: black;
+    font-size: 30px;
+  }
+  #restaurants .title .heart-icon.fas {
+    position: absolute;
+    top: 20px;
+    right: 26px;
+    font-size: 17px;
+    opacity: 0;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(#ff79da, #9356dc);
+    transition: background-image 0.3s ease;
+    cursor: pointer;
+    transform-origin: bottom;
+  }
+  #restaurants .title .heart-icon.fas:hover {
+    opacity: 1;
+    transition: all 0.7s ease-in;
+    transform: scale(2); /* Initially set the scale to 0 */
+  }
   #restaurants h3 {
     font-family: "Roboto", sans-serif;
   }
@@ -258,13 +294,6 @@ body {
   }
   footer .fa-hands-helping {
     font-size: 11px;
-  }
-  .fa-heart {
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    color: black;
-    font-size: 30px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -475,12 +504,24 @@ body {
     position: relative;
     bottom: 5px;
   }
-  #restaurants .title .fa-heart {
+  #restaurants .title .heart-icon.fas {
     position: absolute;
-    top: 5px;
-    right: 20px;
-    color: black;
-    font-size: 30px;
+    top: 20px;
+    right: 26px;
+    font-size: 17px;
+    opacity: 0;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(#ff79da, #9356dc);
+    transition: background-image 0.3s ease;
+    cursor: pointer;
+    transform-origin: bottom;
+  }
+  #restaurants .title .heart-icon.fas:hover {
+    opacity: 1;
+    transition: all 0.7s ease-in;
+    transform: scale(2); /* Initially set the scale to 0 */
   }
   #restaurants h3 {
     font-family: "Roboto", sans-serif;
@@ -528,7 +569,7 @@ body {
   footer .fa-hands-helping {
     font-size: 11px;
   }
-  .fa-heart {
+  .heart-icon.far {
     position: absolute;
     top: 5px;
     right: 20px;
@@ -543,6 +584,25 @@ body {
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
+  }
+  .heart-icon.fas {
+    position: absolute;
+    top: 20px;
+    right: 26px;
+    font-size: 17px;
+    opacity: 0;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(#ff79da, #9356dc);
+    transition: background-image 0.3s ease;
+    cursor: pointer;
+    transform-origin: bottom;
+  }
+  .heart-icon.fas:hover {
+    opacity: 1;
+    transition: all 0.7s ease-in;
+    transform: scale(2); /* Initially set the scale to 0 */
   }
   nav {
     display: flex;
@@ -750,7 +810,7 @@ body {
     position: relative;
     bottom: 5px;
   }
-  #restaurants .title .fa-heart {
+  #restaurants .title .heart-icon.far {
     position: absolute;
     top: 5px;
     right: 20px;
