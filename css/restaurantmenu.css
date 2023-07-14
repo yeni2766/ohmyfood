@@ -5,14 +5,29 @@ body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
-  background-color: #eaeaea;
 }
 
 a {
   text-decoration: none;
   color: black;
 }
-
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
 button {
   transition: all 0.3s ease-in;
   cursor: pointer;
@@ -40,15 +55,6 @@ button:hover {
   animation: fadeOut 3s ease-in-out forwards; /* Animation to fade out the spinner */
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    pointer-events: none;
-  }
-}
 .spinner {
   border: 7px solid #f3f3f3;
   border-radius: 50%;
@@ -59,15 +65,6 @@ button:hover {
   margin: auto;
 }
 
-/* Safari */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @media screen and (max-width: 767px) {
   html,
   body {
@@ -77,6 +74,7 @@ button:hover {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    background-color: #eaeaea;
   }
   nav {
     display: flex;
@@ -364,9 +362,9 @@ button:hover {
   }
   #menus-header {
     width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 300px;
     position: relative;
+    overflow: hidden;
   }
   #menus-header img {
     width: 100%;
@@ -418,7 +416,8 @@ button:hover {
     font-family: "Shrikhand", cursive;
     margin-top: 30px;
     margin-left: 20px;
-    font-size: 25px;
+    font-size: 30px;
+    max-width: 280px;
   }
   #menu h3 {
     font-family: "Roboto", sans-serif;
@@ -447,7 +446,7 @@ button:hover {
   }
   #menu .menu-courses .entrees-card {
     width: 90%;
-    height: 80px;
+    height: auto;
     margin: auto;
     background-color: white;
     border-radius: 15px;
@@ -538,6 +537,7 @@ button:hover {
     transition: all 0.3s ease-in;
   }
 }
+/*tablet*/
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   html,
   body {
@@ -545,6 +545,9 @@ button:hover {
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #eaeaea;
   }
   nav {
     display: flex;
@@ -553,17 +556,16 @@ button:hover {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
   }
   nav .logo {
-    width: 50%;
+    width: 25%;
   }
   nav .nav-section {
     display: flex;
     flex-direction: column;
   }
   nav .nav-section.location {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: #eaeaea;
@@ -572,9 +574,13 @@ button:hover {
     border-top: 5px solid #cfcfcf;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
+    display: inline;
   }
   nav .nav-section.location span {
+    display: inline;
     text-align: center;
+    position: relative;
+    top: 15px;
   }
   nav .nav-section.logo-section {
     display: flex;
@@ -582,6 +588,14 @@ button:hover {
     align-items: center;
     height: 60px;
     padding: 5px;
+    background-color: white;
+    width: 100%;
+  }
+  nav .arrow {
+    position: absolute;
+    top: 23px;
+    left: 25px;
+    font-size: 25px;
   }
   nav .nav-section.logo {
     text-align: center;
@@ -629,65 +643,6 @@ button:hover {
     font-size: small;
     margin-top: 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-  #instructions {
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    overflow: hidden;
-    margin-top: 40px;
-  }
-  #instructions h2 {
-    font-family: "Roboto", sans-serif;
-    margin-left: 20px;
-    margin-bottom: 40px;
-  }
-  #instructions .card-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-right: 0px;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  #instructions .card {
-    width: 70%;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-items: center;
-    padding-left: 70px;
-    border-radius: 20px;
-    background-color: #eaeaea;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
-    position: relative;
-    right: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  #instructions span {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: #9356dc;
-    color: white;
-    text-align: center;
-    line-height: 24px;
-    position: relative;
-    z-index: 9;
-    left: 5px;
-    font-family: "Roboto", sans-serif;
-    font-size: smaller;
-  }
-  #instructions i {
-    position: absolute;
-    left: 30px;
-  }
-  #instructions .fa-store {
-    color: #9356dc;
   }
   #restaurants {
     width: 100%;
@@ -748,6 +703,13 @@ button:hover {
     position: relative;
     bottom: 5px;
   }
+  #restaurants .title .heart-icon.far {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: black;
+    font-size: 30px;
+  }
   #restaurants .title .heart-icon.fas {
     position: absolute;
     top: 20px;
@@ -758,7 +720,6 @@ button:hover {
     background-clip: text;
     -webkit-background-clip: text;
     background-image: linear-gradient(#ff79da, #9356dc);
-    transition: background-image 0.3s ease;
     cursor: pointer;
     transform-origin: bottom;
   }
@@ -777,13 +738,13 @@ button:hover {
   }
   footer {
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
     padding-left: 20px;
     padding-top: 20px;
     background-color: #353535;
     display: flex;
     flex-direction: column;
+    margin: 0;
   }
   footer h4 {
     font-family: "Shrikhand", cursive;
@@ -813,12 +774,180 @@ button:hover {
   footer .fa-hands-helping {
     font-size: 11px;
   }
-  .heart-icon.far {
+  #menus-header {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  #menus-header img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #menu {
+    width: 100%;
+    background-color: #eaeaea;
+    position: relative;
+    bottom: 30px;
+    border-radius: 35px 35px 0 0;
+    margin: 0%;
+    position: relative;
+  }
+  #menu .btn-container {
+    display: flex;
+    position: relative;
+    top: 25px;
+  }
+  #menu .btn-container .order-btn {
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(#ff79da, #9356dc);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: auto;
+  }
+  #menu .top-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #menu .heart-icon {
     position: absolute;
-    top: 5px;
+    top: 35px;
+    right: 40px;
+    font-size: 25px;
+  }
+  #menu h1 {
+    font-family: "Shrikhand", cursive;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  #menu h3 {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  #menu h3::after {
+    content: "";
+    display: block;
+    width: 9%;
+    border-bottom: 3px solid #99e2d0;
+    padding-top: 5px;
+  }
+  #menu .menu-courses {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+  }
+  #menu .menu-courses .menu-cards {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #menu .menu-courses .entrees-card {
+    width: 95%;
+    height: 80px;
+    margin: auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+  #menu .menu-courses .entrees-card .box-contents {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+  }
+  #menu .menu-courses .entrees-card .box-contents h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 19px;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.left {
+    display: block;
+    flex-basis: 70%;
+    position: relative;
+    bottom: 10px;
+    padding-left: 5px;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 30%;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .prices {
+    position: absolute;
     right: 20px;
-    color: black;
-    font-size: 30px;
+    bottom: -1px;
+    transition: all 0.7s ease;
+    font-family: "Roboto", sans-serif;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    background-color: #99e2d0;
+    border-radius: 0 15px 15px 0;
+    transition: all 0.7s ease;
+    position: absolute;
+    right: -120px;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist .tick {
+    display: flex;
+    margin: auto;
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.9s ease-in-out;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist .tick i {
+    margin: auto;
+    color: #99e2d0;
+  }
+  #menu .menu-courses .entrees-card:hover .checklist {
+    transform: translateX(-120px);
+  }
+  #menu .menu-courses .entrees-card:hover .prices {
+    transform: translateX(-120px);
+  }
+  #menu .menu-courses .entrees-card:hover .tick {
+    transform: rotate(360deg);
+  }
+  #menu .menu-courses .entrees-card:hover .menu-extra {
+    width: 200px;
+  }
+  #menu h4 {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+  }
+  #menu .menu-extra {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    bottom: 15px;
+    width: 280px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease-in;
   }
 }
 @media screen and (min-width: 992px) {
@@ -828,25 +957,8 @@ button:hover {
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
-  }
-  .heart-icon.fas {
-    position: absolute;
-    top: 14px;
-    right: 23px;
-    font-size: 23px;
-    opacity: 0;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(#ff79da, #9356dc);
-    transition: background-image 0.3s ease;
-    cursor: pointer;
-    transform-origin: bottom;
-  }
-  .heart-icon.fas:hover {
-    opacity: 1;
-    transition: all 0.3s ease-in;
-    transform: scale(1.6); /* Initially set the scale to 0 */
+    width: 100%;
+    height: 100%;
   }
   nav {
     display: flex;
@@ -855,17 +967,16 @@ button:hover {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
   }
   nav .logo {
-    width: 50%;
+    width: 15%;
   }
   nav .nav-section {
     display: flex;
     flex-direction: column;
   }
   nav .nav-section.location {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: #eaeaea;
@@ -874,9 +985,13 @@ button:hover {
     border-top: 5px solid #cfcfcf;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
+    display: inline;
   }
   nav .nav-section.location span {
+    display: inline;
     text-align: center;
+    position: relative;
+    top: 15px;
   }
   nav .nav-section.logo-section {
     display: flex;
@@ -884,6 +999,14 @@ button:hover {
     align-items: center;
     height: 60px;
     padding: 5px;
+    background-color: white;
+    width: 100%;
+  }
+  nav .arrow {
+    position: absolute;
+    top: 23px;
+    left: 25px;
+    font-size: 25px;
   }
   nav .nav-section.logo {
     text-align: center;
@@ -932,69 +1055,6 @@ button:hover {
     margin-top: 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
-  #instructions {
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    overflow: hidden;
-    margin-top: 40px;
-  }
-  #instructions h2 {
-    font-family: "Roboto", sans-serif;
-    margin-left: 130px;
-    margin-bottom: 40px;
-  }
-  #instructions .cards {
-    display: flex;
-    flex-direction: column;
-  }
-  #instructions .card-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-right: 0px;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  #instructions .card {
-    width: 70%;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-items: center;
-    padding-left: 70px;
-    border-radius: 20px;
-    background-color: #eaeaea;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
-    position: relative;
-    right: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  #instructions span {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: #9356dc;
-    color: white;
-    text-align: center;
-    line-height: 24px;
-    position: relative;
-    z-index: 9;
-    left: 5px;
-    font-family: "Roboto", sans-serif;
-    font-size: smaller;
-  }
-  #instructions i {
-    position: absolute;
-    left: 30px;
-  }
-  #instructions .fa-store {
-    color: #9356dc;
-  }
   #restaurants {
     width: 100%;
     height: -moz-fit-content;
@@ -1008,28 +1068,26 @@ button:hover {
   }
   #restaurants h2 {
     font-family: "Roboto", sans-serif;
-    margin-left: 130px;
+    margin-left: 20px;
   }
   #restaurants .restaurant-card-wrapper {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     position: relative;
     bottom: 20px;
     margin-bottom: 70px;
-    flex-wrap: wrap;
   }
   #restaurants .restaurant-cards {
     position: relative;
     height: 260px;
-    width: 40%;
+    width: 90%;
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     margin-top: 20px;
-    margin-left: 15px;
   }
   #restaurants .new {
     position: absolute;
@@ -1063,6 +1121,24 @@ button:hover {
     color: black;
     font-size: 30px;
   }
+  #restaurants .title .heart-icon.fas {
+    position: absolute;
+    top: 20px;
+    right: 26px;
+    font-size: 17px;
+    opacity: 0;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(#ff79da, #9356dc);
+    cursor: pointer;
+    transform-origin: bottom;
+  }
+  #restaurants .title .heart-icon.fas:hover {
+    opacity: 1;
+    transition: all 0.7s ease-in;
+    transform: scale(2); /* Initially set the scale to 0 */
+  }
   #restaurants h3 {
     font-family: "Roboto", sans-serif;
   }
@@ -1073,13 +1149,13 @@ button:hover {
   }
   footer {
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
-    padding-left: 140px;
+    padding-left: 20px;
     padding-top: 20px;
     background-color: #353535;
     display: flex;
     flex-direction: column;
+    margin: 0;
   }
   footer h4 {
     font-family: "Shrikhand", cursive;
@@ -1109,4 +1185,179 @@ button:hover {
   footer .fa-hands-helping {
     font-size: 11px;
   }
-}/*# sourceMappingURL=menus.css.map */
+  #menus-header {
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+  #menus-header img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #menu {
+    width: 95%;
+    background-color: #eaeaea;
+    position: relative;
+    bottom: 30px;
+    border-radius: 35px 35px 0 0;
+    margin: 0%;
+    margin: auto;
+    position: relative;
+  }
+  #menu .btn-container {
+    display: flex;
+    position: relative;
+    top: 25px;
+  }
+  #menu .btn-container .order-btn {
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(#ff79da, #9356dc);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: auto;
+  }
+  #menu .top-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #menu .heart-icon {
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    font-size: 25px;
+  }
+  #menu h1 {
+    font-family: "Shrikhand", cursive;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  #menu h3 {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  #menu h3::after {
+    content: "";
+    display: block;
+    width: 9%;
+    border-bottom: 3px solid #99e2d0;
+    padding-top: 5px;
+  }
+  #menu .menu-courses {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+  }
+  #menu .menu-courses .menu-cards {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #menu .menu-courses .entrees-card {
+    width: 95%;
+    height: 80px;
+    margin: auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+  #menu .menu-courses .entrees-card .box-contents {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+  }
+  #menu .menu-courses .entrees-card .box-contents h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 19px;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.left {
+    display: block;
+    flex-basis: 70%;
+    position: relative;
+    bottom: 10px;
+    padding-left: 5px;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 30%;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .prices {
+    position: absolute;
+    right: 20px;
+    bottom: -1px;
+    transition: all 0.7s ease;
+    font-family: "Roboto", sans-serif;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    background-color: #99e2d0;
+    border-radius: 0 15px 15px 0;
+    transition: all 0.7s ease;
+    position: absolute;
+    right: -120px;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist .tick {
+    display: flex;
+    margin: auto;
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.9s ease-in-out;
+  }
+  #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist .tick i {
+    margin: auto;
+    color: #99e2d0;
+  }
+  #menu .menu-courses .entrees-card:hover .checklist {
+    transform: translateX(-120px);
+  }
+  #menu .menu-courses .entrees-card:hover .prices {
+    transform: translateX(-120px);
+  }
+  #menu .menu-courses .entrees-card:hover .tick {
+    transform: rotate(360deg);
+  }
+  #menu .menu-courses .entrees-card:hover .menu-extra {
+    width: 200px;
+  }
+  #menu h4 {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+  }
+  #menu .menu-extra {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    bottom: 15px;
+    width: 280px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease-in;
+  }
+}/*# sourceMappingURL=restaurantmenu.css.map */

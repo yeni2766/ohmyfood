@@ -1,42 +1,7 @@
-$primary: #9356dc;
-$secondary: #ff79da;
-$tertiary: #99e2d0;
-$mobile: "767px";
-$mintablet: "768px";
-$maxtablet: "991px";
-$desktop: "992px";
-$imagewidth: "50%";
-$grey: #eaeaea;
-$bordertop: #cfcfcf;
-$myfont: "Roboto", sans-serif;
-$boldfont: 700;
-$headercolour: #f6f6f6;
-$buttoncolour: white;
-$buttonboldfont: 900;
-$lightfont: 100;
-$buttonshadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-$iconsmarginright: 30px;
-$iconsize: 20px;
-$imgheight: 70%;
-$imgwidth: 100%;
-$borderimage: 15px 15px 0px 0px;
-$newbuttoncolor: #99e2d0;
-$newbuttontitlecolor: #0a8d6d;
-$logofont: "Shrikhand", cursive;
+@import 'variables';
+@import 'standard';
+@import 'animation';
 
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%;
-  background-color: $grey;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
 button {
   transition: all 0.3s ease-in;
   cursor: pointer;
@@ -62,15 +27,6 @@ button:hover {
   transition: opacity 0.3s ease-in-out;
   animation: fadeOut 3s ease-in-out forwards; /* Animation to fade out the spinner */
 }
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    pointer-events: none;
-  }
-}
 .spinner {
   border: 7px solid #f3f3f3;
   border-radius: 50%;
@@ -82,24 +38,6 @@ button:hover {
   margin: auto;
 }
 
-/* Safari */
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @media screen and (max-width: $mobile) {
   html,
   body {
@@ -109,6 +47,7 @@ button:hover {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    background-color: $grey;
   }
 
   nav {
@@ -423,8 +362,9 @@ button:hover {
 
   #menus-header {
     width: 100%;
-    height: fit-content;
+    height: 300px;
     position: relative;
+    overflow: hidden;
     img {
       width: 100%;
       height: 100%;
@@ -478,7 +418,8 @@ button:hover {
       font-family: $logofont;
       margin-top: 30px;
       margin-left: 20px;
-      font-size: 25px;
+      font-size: 30px;
+      max-width: 280px;
     }
     h3 {
       font-family: $myfont;
@@ -509,7 +450,7 @@ button:hover {
 
       .entrees-card {
         width: 90%;
-        height: 80px;
+        height: auto;
         margin: auto;
         background-color: white;
         border-radius: 15px;
@@ -517,6 +458,8 @@ button:hover {
         padding-left: 5px;
         box-sizing: border-box;
         margin-top: 20px;
+          
+
 
         .box-contents {
           display: flex;
@@ -615,6 +558,7 @@ button:hover {
   }
 }
 
+/*tablet*/
 @media only screen and (min-width: $mintablet) and (max-width: $maxtablet) {
   html,
   body {
@@ -622,7 +566,11 @@ button:hover {
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: $grey;
   }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -630,8 +578,9 @@ button:hover {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
     .logo {
-      width: 50%;
+      width: 25%;
     }
     .nav-section {
       display: flex;
@@ -639,8 +588,6 @@ button:hover {
     }
 
     .nav-section.location {
-      display: flex;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
       background-color: $grey;
@@ -649,10 +596,14 @@ button:hover {
       border-top: 5px solid $bordertop;
       font-family: $myfont;
       font-weight: $boldfont;
+      display: inline;
     }
 
     .nav-section.location span {
+      display: inline;
       text-align: center;
+      position: relative;
+      top: 15px;
     }
 
     .nav-section.logo-section {
@@ -661,6 +612,15 @@ button:hover {
       align-items: center;
       height: 60px;
       padding: 5px;
+      background-color: white;
+      width: 100%;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 23px;
+      left: 25px;
+      font-size: 25px;
     }
 
     .nav-section.logo {
@@ -714,68 +674,6 @@ button:hover {
       font-size: small;
       margin-top: 0px;
       box-shadow: $buttonshadow;
-    }
-  }
-
-  #instructions {
-    width: 100%;
-    height: fit-content;
-    overflow: hidden;
-    margin-top: 40px;
-
-    h2 {
-      font-family: $myfont;
-      margin-left: 20px;
-      margin-bottom: 40px;
-    }
-
-    .card-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding-right: 0px;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .card {
-      width: 70%;
-      height: 80px;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      align-items: center;
-      padding-left: 70px;
-      border-radius: 20px;
-      background-color: $grey;
-      font-weight: bold;
-      font-family: $myfont;
-      position: relative;
-      right: 10px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    span {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-color: $primary;
-      color: white;
-      text-align: center;
-      line-height: 24px;
-      position: relative;
-      z-index: 9;
-      left: 5px;
-      font-family: $myfont;
-      font-size: smaller;
-    }
-    i {
-      position: absolute;
-      left: 30px;
-    }
-
-    .fa-store {
-      color: $primary;
     }
   }
 
@@ -840,6 +738,13 @@ button:hover {
       padding-left: 20px;
       position: relative;
       bottom: 5px;
+      .heart-icon.far {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        color: black;
+        font-size: 30px;
+      }
       .heart-icon.fas {
         position: absolute;
         top: 20px;
@@ -850,7 +755,6 @@ button:hover {
         background-clip: text;
         -webkit-background-clip: text;
         background-image: linear-gradient(#ff79da, #9356dc);
-        transition: background-image 0.3s ease;
         cursor: pointer;
         transform-origin: bottom;
       }
@@ -873,13 +777,13 @@ button:hover {
 
   footer {
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
     padding-left: 20px;
     padding-top: 20px;
     background-color: #353535;
     display: flex;
     flex-direction: column;
+    margin: 0;
 
     h4 {
       font-family: $logofont;
@@ -914,12 +818,197 @@ button:hover {
       font-size: 11px;
     }
   }
-  .heart-icon.far {
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    color: black;
-    font-size: 30px;
+
+  #menus-header {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #menu {
+    width: 100%;
+    background-color: $grey;
+    position: relative;
+    bottom: 30px;
+    border-radius: 35px 35px 0 0;
+    margin: 0%;
+    position: relative;
+    .btn-container {
+      display: flex;
+      position: relative;
+      top: 25px;
+      .order-btn {
+        border-radius: 30px;
+        border: none;
+        background: linear-gradient($secondary, $primary);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 60px;
+        padding-right: 60px;
+        color: $buttoncolour;
+        font-weight: bold;
+        font-size: medium;
+        margin-top: 0px;
+        box-shadow: $buttonshadow;
+        margin: auto;
+      }
+    }
+
+    .top-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .heart-icon {
+      position: absolute;
+      top: 35px;
+      right: 40px;
+      font-size: 25px;
+    }
+
+    h1 {
+      font-family: $logofont;
+      margin-top: 30px;
+      margin-left: 20px;
+      font-size: 25px;
+    }
+    h3 {
+      font-family: $myfont;
+      text-transform: uppercase;
+      margin-left: 20px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    h3::after {
+      content: "";
+      display: block;
+      width: 9%;
+      border-bottom: 3px solid $newbuttoncolor;
+      padding-top: 5px;
+    }
+
+    .menu-courses {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+
+      .menu-cards {
+        width: 100%;
+        height: fit-content;
+      }
+      .entrees-card {
+        width:  95%;
+        height: 80px;
+        margin: auto;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: $buttonshadow;
+        padding-left: 5px;
+        box-sizing: border-box;
+        margin-top: 20px;
+
+        .box-contents {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 80px;
+
+          h4 {
+            font-family: $myfont;
+            font-size: 19px;
+          }
+
+          .box-contents.left {
+            display: block;
+            flex-basis: 70%;
+            position: relative;
+            bottom: 10px;
+            padding-left: 5px;
+          }
+          .box-contents.right {
+            display: flex;
+            justify-content: space-between;
+            flex-basis: 30%;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+
+            .prices {
+              position: absolute;
+              right: 20px;
+              bottom: -1px;
+              transition: all 0.7s ease;
+              font-family: $myfont;
+            }
+
+            .checklist {
+              display: flex;
+              height: 100%;
+              width: 50%;
+              background-color: $newbuttoncolor;
+              border-radius: 0 15px 15px 0;
+              transition: all 0.7s ease;
+              position: absolute;
+              right: -120px;
+
+              .tick {
+                display: flex;
+                margin: auto;
+                background-color: white;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                transition: transform 0.9s ease-in-out;
+                i {
+                  margin: auto;
+                  color: $newbuttoncolor;
+                }
+              }
+            }
+          }
+        }
+
+        &:hover .checklist {
+          transform: translateX(-120px);
+        }
+
+        &:hover .prices {
+          transform: translateX(-120px);
+        }
+
+        &:hover .tick {
+          transform: rotate(360deg);
+        }
+
+        &:hover .menu-extra {
+          width: 200px;
+        }
+      }
+    }
+
+    h4 {
+      position: relative;
+      font-family: $myfont;
+    }
+
+    .menu-extra {
+      font-family: $myfont;
+      position: relative;
+      bottom: 15px;
+      width: 280px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      transition: all 0.3s ease-in;
+    }
   }
 }
 
@@ -930,27 +1019,10 @@ button:hover {
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
-  }
-  .heart-icon.fas {
-    position: absolute;
-    top: 14px;
-    right: 23px;
-    font-size: 23px;
-    opacity: 0;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(#ff79da, #9356dc);
-    transition: background-image 0.3s ease;
-    cursor: pointer;
-    transform-origin: bottom;
+    width: 100%;
+    height: 100%;
   }
 
-  .heart-icon.fas:hover {
-    opacity: 1;
-    transition: all 0.3s ease-in;
-    transform: scale(1.6); /* Initially set the scale to 0 */
-  }
   nav {
     display: flex;
     flex-direction: column;
@@ -958,8 +1030,9 @@ button:hover {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
     .logo {
-      width: 50%;
+      width: 15%;
     }
     .nav-section {
       display: flex;
@@ -967,8 +1040,6 @@ button:hover {
     }
 
     .nav-section.location {
-      display: flex;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
       background-color: $grey;
@@ -977,10 +1048,14 @@ button:hover {
       border-top: 5px solid $bordertop;
       font-family: $myfont;
       font-weight: $boldfont;
+      display: inline;
     }
 
     .nav-section.location span {
+      display: inline;
       text-align: center;
+      position: relative;
+      top: 15px;
     }
 
     .nav-section.logo-section {
@@ -989,6 +1064,15 @@ button:hover {
       align-items: center;
       height: 60px;
       padding: 5px;
+      background-color: white;
+      width: 100%;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 23px;
+      left: 25px;
+      font-size: 25px;
     }
 
     .nav-section.logo {
@@ -1045,73 +1129,6 @@ button:hover {
     }
   }
 
-  #instructions {
-    width: 100%;
-    height: fit-content;
-    overflow: hidden;
-    margin-top: 40px;
-
-    h2 {
-      font-family: $myfont;
-      margin-left: 130px;
-      margin-bottom: 40px;
-    }
-
-    .cards {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding-right: 0px;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .card {
-      width: 70%;
-      height: 80px;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      align-items: center;
-      padding-left: 70px;
-      border-radius: 20px;
-      background-color: $grey;
-      font-weight: bold;
-      font-family: $myfont;
-      position: relative;
-      right: 10px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    span {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-color: $primary;
-      color: white;
-      text-align: center;
-      line-height: 24px;
-      position: relative;
-      z-index: 9;
-      left: 5px;
-      font-family: $myfont;
-      font-size: smaller;
-    }
-    i {
-      position: absolute;
-      left: 30px;
-    }
-
-    .fa-store {
-      color: $primary;
-    }
-  }
-
   #restaurants {
     width: 100%;
     height: fit-content;
@@ -1124,30 +1141,28 @@ button:hover {
 
     h2 {
       font-family: $myfont;
-      margin-left: 130px;
+      margin-left: 20px;
     }
 
     .restaurant-card-wrapper {
       display: flex;
       justify-content: center;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       position: relative;
       bottom: 20px;
       margin-bottom: 70px;
-      flex-wrap: wrap;
     }
 
     .restaurant-cards {
       position: relative;
       height: 260px;
-      width: 40%;
+      width: 90%;
       background-color: white;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: $buttonshadow;
       margin-top: 20px;
-      margin-left: 15px;
     }
 
     .new {
@@ -1182,6 +1197,25 @@ button:hover {
         color: black;
         font-size: 30px;
       }
+      .heart-icon.fas {
+        position: absolute;
+        top: 20px;
+        right: 26px;
+        font-size: 17px;
+        opacity: 0;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(#ff79da, #9356dc);
+        cursor: pointer;
+        transform-origin: bottom;
+      }
+
+      .heart-icon.fas:hover {
+        opacity: 1;
+        transition: all 0.7s ease-in;
+        transform: scale(2); /* Initially set the scale to 0 */
+      }
     }
     h3 {
       font-family: $myfont;
@@ -1195,14 +1229,13 @@ button:hover {
 
   footer {
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
-    padding-left: 140px;
-
+    padding-left: 20px;
     padding-top: 20px;
     background-color: #353535;
     display: flex;
     flex-direction: column;
+    margin: 0;
 
     h4 {
       font-family: $logofont;
@@ -1235,6 +1268,200 @@ button:hover {
     }
     .fa-hands-helping {
       font-size: 11px;
+    }
+  }
+
+  #menus-header {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #menu {
+    width: 95%;
+    background-color: $grey;
+    position: relative;
+    bottom: 30px;
+    border-radius: 35px 35px 0 0;
+    margin: 0%;
+    margin: auto;
+    position: relative;
+    .btn-container {
+      display: flex;
+      position: relative;
+      top: 25px;
+      .order-btn {
+        border-radius: 30px;
+        border: none;
+        background: linear-gradient($secondary, $primary);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 60px;
+        padding-right: 60px;
+        color: $buttoncolour;
+        font-weight: bold;
+        font-size: medium;
+        margin-top: 0px;
+        box-shadow: $buttonshadow;
+        margin: auto;
+      }
+    }
+
+    .top-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .heart-icon {
+      position: absolute;
+      top: 35px;
+      right: 40px;
+      font-size: 25px;
+    }
+
+    h1 {
+      font-family: $logofont;
+      margin-top: 30px;
+      margin-left: 20px;
+      font-size: 25px;
+    }
+    h3 {
+      font-family: $myfont;
+      text-transform: uppercase;
+      margin-left: 20px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    h3::after {
+      content: "";
+      display: block;
+      width: 9%;
+      border-bottom: 3px solid $newbuttoncolor;
+      padding-top: 5px;
+    }
+
+    .menu-courses {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+
+      .menu-cards {
+        width: 100%;
+        height: fit-content;
+      }
+
+      .entrees-card {
+        width:  95%;
+        height: 80px;
+        margin: auto;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: $buttonshadow;
+        padding-left: 5px;
+        box-sizing: border-box;
+        margin-top: 20px;
+
+        .box-contents {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 80px;
+
+          h4 {
+            font-family: $myfont;
+            font-size: 19px;
+          }
+
+          .box-contents.left {
+            display: block;
+            flex-basis: 70%;
+            position: relative;
+            bottom: 10px;
+            padding-left: 5px;
+          }
+          .box-contents.right {
+            display: flex;
+            justify-content: space-between;
+            flex-basis: 30%;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+
+            .prices {
+              position: absolute;
+              right: 20px;
+              bottom: -1px;
+              transition: all 0.7s ease;
+              font-family: $myfont;
+            }
+
+            .checklist {
+              display: flex;
+              height: 100%;
+              width: 50%;
+              background-color: $newbuttoncolor;
+              border-radius: 0 15px 15px 0;
+              transition: all 0.7s ease;
+              position: absolute;
+              right: -120px;
+
+              .tick {
+                display: flex;
+                margin: auto;
+                background-color: white;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                transition: transform 0.9s ease-in-out;
+                i {
+                  margin: auto;
+                  color: $newbuttoncolor;
+                }
+              }
+            }
+          }
+        }
+
+        &:hover .checklist {
+          transform: translateX(-120px);
+        }
+
+        &:hover .prices {
+          transform: translateX(-120px);
+        }
+
+        &:hover .tick {
+          transform: rotate(360deg);
+        }
+
+        &:hover .menu-extra {
+          width: 200px;
+        }
+      }
+    }
+
+    h4 {
+      position: relative;
+      font-family: $myfont;
+    }
+
+    .menu-extra {
+      font-family: $myfont;
+      position: relative;
+      bottom: 15px;
+      width: 280px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      transition: all 0.3s ease-in;
     }
   }
 }
