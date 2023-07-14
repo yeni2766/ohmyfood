@@ -444,9 +444,27 @@ button:hover {
     height: -moz-fit-content;
     height: fit-content;
   }
+  #menu .menu-courses .entrees-card.bigger {
+    height: 90px;
+  }
+  #menu .menu-courses .menu-extra.bigger {
+    position: relative;
+    bottom: 20px;
+  }
+  #menu .menu-courses .prices.bigger {
+    position: relative;
+    top: 50px;
+  }
+  #menu .menu-courses .box-contents.bigger {
+    height: 90px !important;
+  }
+  #menu .menu-courses .box-contents.right.bigger {
+    height: 90px;
+  }
   #menu .menu-courses .entrees-card {
     width: 90%;
-    height: auto;
+    height: -moz-fit-content;
+    height: fit-content;
     margin: auto;
     background-color: white;
     border-radius: 15px;

@@ -447,10 +447,35 @@ button:hover {
         width: 100%;
         height: fit-content;
       }
+      .entrees-card.bigger{
+       height:90px;
+      }
+
+      .menu-extra.bigger{
+        position: relative;
+        bottom:20px;
+      }
+
+      .prices.bigger{
+        position: relative;
+        top:50px;
+      }
+
+      .box-contents.bigger{
+       height: 90px !important;
+      }
+
+      .box-contents.right.bigger{
+        height: 90px;
+       }
+
+   
+
+
 
       .entrees-card {
         width: 90%;
-        height: auto;
+        height: fit-content;
         margin: auto;
         background-color: white;
         border-radius: 15px;

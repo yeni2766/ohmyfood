@@ -12,7 +12,6 @@ button:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-
 #loading-spinner {
   position: fixed;
   top: 0;
@@ -64,7 +63,7 @@ button:hover {
     height: 100%;
   }
 
-  @mixin nav {
+  nav {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -75,7 +74,7 @@ button:hover {
     .logo {
       width: 50%;
     }
-    @mixin nav-section {
+    .nav-section {
       display: flex;
       flex-direction: column;
     }
@@ -861,8 +860,6 @@ button:hover {
     font-size: 30px;
   }
 }
-
-
 
 
 @media screen and (min-width: $desktop) {
