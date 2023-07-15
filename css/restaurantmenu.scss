@@ -1,6 +1,6 @@
-@import 'variables';
-@import 'standard';
-@import 'animation';
+@import "variables";
+@import "standard";
+@import "animation";
 
 button {
   transition: all 0.3s ease-in;
@@ -407,35 +407,34 @@ button:hover {
       justify-content: space-between;
     }
 
-    
-  .top-menu{
-    .heart-icon.far {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      color: black;
-      font-size: 30px;
-    }
-    .heart-icon.fas {
-      position: absolute;
-      top: 45px;
-      right: 36px;
-      font-size: 17px;
-      opacity: 0;
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      background-image: linear-gradient(#ff79da, #9356dc);
-      cursor: pointer;
-      transform-origin: bottom;
-    }
+    .top-menu {
+      .heart-icon.far {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: black;
+        font-size: 30px;
+      }
+      .heart-icon.fas {
+        position: absolute;
+        top: 45px;
+        right: 36px;
+        font-size: 17px;
+        opacity: 0;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(#ff79da, #9356dc);
+        cursor: pointer;
+        transform-origin: bottom;
+      }
 
-    .heart-icon.fas:hover {
-      opacity: 1;
-      transition: all 0.7s ease-in;
-      transform: scale(2); /* Initially set the scale to 0 */
+      .heart-icon.fas:hover {
+        opacity: 1;
+        transition: all 0.7s ease-in;
+        transform: scale(2); /* Initially set the scale to 0 */
+      }
     }
-  }
 
     h1 {
       font-family: $logofont;
@@ -470,37 +469,32 @@ button:hover {
         width: 100%;
         height: fit-content;
       }
-      .entrees-card.bigger{
-       height:90px;
-      }
-
-      .menu-extra.bigger{
-        position: relative;
-        bottom:15px;
-      }
-
-      .menu-extra.bigger-card{
-        position: relative;
-        top:5px;
-      }
-
-
-      .prices.bigger{
-        position: relative;
-        top:45px;
-      }
-
-      .box-contents.bigger{
-       height: 90px !important;
-      }
-
-      .box-contents.right.bigger{
+      .entrees-card.bigger {
         height: 90px;
-       }
+      }
 
-   
+      .menu-extra.bigger {
+        position: relative;
+        bottom: 15px;
+      }
 
+      .menu-extra.bigger-card {
+        position: relative;
+        top: 5px;
+      }
 
+      .prices.bigger {
+        position: relative;
+        top: 45px;
+      }
+
+      .box-contents.bigger {
+        height: 90px !important;
+      }
+
+      .box-contents.right.bigger {
+        height: 90px;
+      }
 
       .entrees-card {
         width: 90%;
@@ -512,8 +506,6 @@ button:hover {
         padding-left: 5px;
         box-sizing: border-box;
         margin-top: 20px;
-          
-
 
         .box-contents {
           display: flex;
@@ -793,7 +785,7 @@ button:hover {
       position: relative;
       bottom: 5px;
     }
-    
+
     h3 {
       font-family: $myfont;
     }
@@ -892,8 +884,7 @@ button:hover {
       justify-content: space-between;
     }
 
-
-    .top-menu{
+    .top-menu {
       .heart-icon.far {
         position: absolute;
         top: 30px;
@@ -914,7 +905,7 @@ button:hover {
         cursor: pointer;
         transform-origin: bottom;
       }
-  
+
       .heart-icon.fas:hover {
         opacity: 1;
         transition: all 0.7s ease-in;
@@ -955,7 +946,7 @@ button:hover {
         height: fit-content;
       }
       .entrees-card {
-        width:  95%;
+        width: 95%;
         height: 80px;
         margin: auto;
         background-color: white;
@@ -1063,8 +1054,8 @@ button:hover {
 }
 
 @media screen and (min-width: $desktop) {
-
-  html,body {
+  html,
+  body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -1239,7 +1230,6 @@ button:hover {
       padding-left: 20px;
       position: relative;
       bottom: 5px;
-      
     }
     h3 {
       font-family: $myfont;
@@ -1314,15 +1304,15 @@ button:hover {
     border-radius: 35px 35px 0 0;
     margin: 0%;
     margin: auto;
-    
-    .row{
+
+    .row {
       display: flex;
       flex-direction: row;
       padding: 20px;
       position: relative;
     }
 
-    .top-menu{
+    .top-menu {
       .heart-icon.far {
         position: absolute;
         top: 30px;
@@ -1369,7 +1359,7 @@ button:hover {
         box-shadow: $buttonshadow;
         margin: auto;
         position: relative;
-        bottom:50px;
+        bottom: 50px;
       }
     }
 
@@ -1420,7 +1410,7 @@ button:hover {
       }
 
       .entrees-card {
-        width:  95%;
+        width: 95%;
         height: 80px;
         margin: auto;
         background-color: white;

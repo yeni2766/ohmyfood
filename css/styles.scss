@@ -1,7 +1,6 @@
-@import 'variables';
-@import 'standard';
-@import 'animation';
-
+@import "variables";
+@import "standard";
+@import "animation";
 
 button {
   transition: all 0.3s ease-in;
@@ -40,7 +39,7 @@ button:hover {
   margin: auto;
 }
 
-@mixin nav-section{
+@mixin nav-section {
   justify-content: center;
   align-items: center;
   background-color: $grey;
@@ -566,7 +565,7 @@ button:hover {
     box-sizing: border-box;
   }
   nav {
-   @include nav;
+    @include nav;
     .logo {
       width: 50%;
     }
@@ -859,7 +858,6 @@ button:hover {
     font-size: 30px;
   }
 }
-
 
 @media screen and (min-width: $desktop) {
   html,
