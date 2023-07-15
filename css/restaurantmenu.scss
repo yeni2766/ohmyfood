@@ -59,7 +59,7 @@ button:hover {
     box-sizing: border-box;
     position: relative;
     .logo {
-      width: 48%;
+      width: 50%;
     }
     .nav-section {
       display: flex;
@@ -318,7 +318,6 @@ button:hover {
 
   footer {
     width: 100%;
-    box-sizing: border-box;
     padding-left: 20px;
     padding-top: 20px;
     background-color: #353535;
@@ -380,6 +379,7 @@ button:hover {
     border-radius: 35px 35px 0 0;
     margin: 0%;
     position: relative;
+
     .btn-container {
       display: flex;
       position: relative;
@@ -407,12 +407,35 @@ button:hover {
       justify-content: space-between;
     }
 
-    .heart-icon {
+    
+  .top-menu{
+    .heart-icon.far {
       position: absolute;
-      top: 35px;
-      right: 40px;
-      font-size: 25px;
+      top: 30px;
+      right: 30px;
+      color: black;
+      font-size: 30px;
     }
+    .heart-icon.fas {
+      position: absolute;
+      top: 45px;
+      right: 36px;
+      font-size: 17px;
+      opacity: 0;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-image: linear-gradient(#ff79da, #9356dc);
+      cursor: pointer;
+      transform-origin: bottom;
+    }
+
+    .heart-icon.fas:hover {
+      opacity: 1;
+      transition: all 0.7s ease-in;
+      transform: scale(2); /* Initially set the scale to 0 */
+    }
+  }
 
     h1 {
       font-family: $logofont;
@@ -453,12 +476,18 @@ button:hover {
 
       .menu-extra.bigger{
         position: relative;
-        bottom:20px;
+        bottom:15px;
       }
+
+      .menu-extra.bigger-card{
+        position: relative;
+        top:5px;
+      }
+
 
       .prices.bigger{
         position: relative;
-        top:50px;
+        top:45px;
       }
 
       .box-contents.bigger{
@@ -494,12 +523,12 @@ button:hover {
 
           h4 {
             font-family: $myfont;
-            font-size: 19px;
+            font-size: 17px;
           }
 
           .box-contents.left {
             display: block;
-            flex-basis: 70%;
+            flex-basis: 65%;
             position: relative;
             bottom: 10px;
             padding-left: 5px;
@@ -507,7 +536,7 @@ button:hover {
           .box-contents.right {
             display: flex;
             justify-content: space-between;
-            flex-basis: 30%;
+            flex-basis: 35%;
             position: relative;
             overflow: hidden;
             width: 100%;
@@ -528,7 +557,7 @@ button:hover {
               border-radius: 0 15px 15px 0;
               transition: all 0.7s ease;
               position: absolute;
-              right: -55px;
+              right: -75px;
 
               .tick {
                 display: flex;
@@ -548,11 +577,11 @@ button:hover {
         }
 
         &:hover .checklist {
-          transform: translateX(-55px);
+          transform: translateX(-75px);
         }
 
         &:hover .prices {
-          transform: translateX(-50px);
+          transform: translateX(-60px);
         }
 
         &:hover .tick {
@@ -573,8 +602,8 @@ button:hover {
     .menu-extra {
       font-family: $myfont;
       position: relative;
-      bottom: 15px;
-      width: 280px;
+      bottom: 10px;
+      max-width: 250px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -605,7 +634,7 @@ button:hover {
     box-sizing: border-box;
     position: relative;
     .logo {
-      width: 25%;
+      width: 50%;
     }
     .nav-section {
       display: flex;
@@ -763,33 +792,8 @@ button:hover {
       padding-left: 20px;
       position: relative;
       bottom: 5px;
-      .heart-icon.far {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        color: black;
-        font-size: 30px;
-      }
-      .heart-icon.fas {
-        position: absolute;
-        top: 20px;
-        right: 26px;
-        font-size: 17px;
-        opacity: 0;
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient(#ff79da, #9356dc);
-        cursor: pointer;
-        transform-origin: bottom;
-      }
-
-      .heart-icon.fas:hover {
-        opacity: 1;
-        transition: all 0.7s ease-in;
-        transform: scale(2); /* Initially set the scale to 0 */
-      }
     }
+    
     h3 {
       font-family: $myfont;
     }
@@ -799,10 +803,8 @@ button:hover {
       font-family: $myfont;
     }
   }
-
   footer {
     width: 100%;
-    box-sizing: border-box;
     padding-left: 20px;
     padding-top: 20px;
     background-color: #353535;
@@ -846,7 +848,7 @@ button:hover {
 
   #menus-header {
     width: 100%;
-    height: fit-content;
+    height: 400px;
     position: relative;
     img {
       width: 100%;
@@ -878,9 +880,9 @@ button:hover {
         color: $buttoncolour;
         font-weight: bold;
         font-size: medium;
-        margin-top: 0px;
         box-shadow: $buttonshadow;
         margin: auto;
+        margin-bottom: 40px;
       }
     }
 
@@ -890,11 +892,34 @@ button:hover {
       justify-content: space-between;
     }
 
-    .heart-icon {
-      position: absolute;
-      top: 35px;
-      right: 40px;
-      font-size: 25px;
+
+    .top-menu{
+      .heart-icon.far {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: black;
+        font-size: 30px;
+      }
+      .heart-icon.fas {
+        position: absolute;
+        top: 45px;
+        right: 36px;
+        font-size: 17px;
+        opacity: 0;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(#ff79da, #9356dc);
+        cursor: pointer;
+        transform-origin: bottom;
+      }
+  
+      .heart-icon.fas:hover {
+        opacity: 1;
+        transition: all 0.7s ease-in;
+        transform: scale(2); /* Initially set the scale to 0 */
+      }
     }
 
     h1 {
@@ -914,7 +939,7 @@ button:hover {
     h3::after {
       content: "";
       display: block;
-      width: 9%;
+      width: 5%;
       border-bottom: 3px solid $newbuttoncolor;
       padding-top: 5px;
     }
@@ -1038,14 +1063,13 @@ button:hover {
 }
 
 @media screen and (min-width: $desktop) {
-  html,
-  body {
+
+  html,body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
   }
 
   nav {
@@ -1057,7 +1081,7 @@ button:hover {
     box-sizing: border-box;
     position: relative;
     .logo {
-      width: 15%;
+      width: 50%;
     }
     .nav-section {
       display: flex;
@@ -1215,32 +1239,7 @@ button:hover {
       padding-left: 20px;
       position: relative;
       bottom: 5px;
-      .heart-icon.far {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        color: black;
-        font-size: 30px;
-      }
-      .heart-icon.fas {
-        position: absolute;
-        top: 20px;
-        right: 26px;
-        font-size: 17px;
-        opacity: 0;
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient(#ff79da, #9356dc);
-        cursor: pointer;
-        transform-origin: bottom;
-      }
-
-      .heart-icon.fas:hover {
-        opacity: 1;
-        transition: all 0.7s ease-in;
-        transform: scale(2); /* Initially set the scale to 0 */
-      }
+      
     }
     h3 {
       font-family: $myfont;
@@ -1254,8 +1253,8 @@ button:hover {
 
   footer {
     width: 100%;
-    box-sizing: border-box;
-    padding-left: 20px;
+    height: 100%;
+    padding-left: 40px;
     padding-top: 20px;
     background-color: #353535;
     display: flex;
@@ -1298,7 +1297,7 @@ button:hover {
 
   #menus-header {
     width: 100%;
-    height: 500px;
+    height: 350px;
     position: relative;
     img {
       width: 100%;
@@ -1309,13 +1308,49 @@ button:hover {
 
   #menu {
     width: 95%;
+    height: fit-content;
     background-color: $grey;
     position: relative;
-    bottom: 30px;
     border-radius: 35px 35px 0 0;
     margin: 0%;
     margin: auto;
-    position: relative;
+    
+    .row{
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      position: relative;
+    }
+
+    .top-menu{
+      .heart-icon.far {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: black;
+        font-size: 30px;
+      }
+      .heart-icon.fas {
+        position: absolute;
+        top: 45px;
+        right: 36px;
+        font-size: 17px;
+        opacity: 0;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(#ff79da, #9356dc);
+        cursor: pointer;
+        transform-origin: bottom;
+      }
+
+      .heart-icon.fas:hover {
+        opacity: 1;
+        transition: all 0.7s ease-in;
+        transform: scale(2); /* Initially set the scale to 0 */
+      }
+    }
+
     .btn-container {
       display: flex;
       position: relative;
@@ -1331,9 +1366,10 @@ button:hover {
         color: $buttoncolour;
         font-weight: bold;
         font-size: medium;
-        margin-top: 0px;
         box-shadow: $buttonshadow;
         margin: auto;
+        position: relative;
+        bottom:50px;
       }
     }
 
@@ -1402,7 +1438,7 @@ button:hover {
 
           h4 {
             font-family: $myfont;
-            font-size: 19px;
+            font-size: 18px;
           }
 
           .box-contents.left {
