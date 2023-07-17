@@ -611,6 +611,20 @@ button:hover {
     margin-top: 30px;
     margin-bottom: 20px;
   }
+  header button {
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(#ff79da, #9356dc);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    margin-top: 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
   #instructions {
     width: 100%;
     height: -moz-fit-content;
@@ -1090,4 +1104,4 @@ button:hover {
   footer .fa-hands-helping {
     font-size: 11px;
   }
-}/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles1.css.map */

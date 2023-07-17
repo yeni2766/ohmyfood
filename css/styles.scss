@@ -647,6 +647,7 @@ button:hover {
     width: 100%;
     box-sizing: border-box;
 
+
     h1 {
       font-size: 25px;
       margin-top: 20px;
@@ -662,19 +663,8 @@ button:hover {
       margin-bottom: 20px;
     }
 
-    @mixin button {
-      border-radius: 30px;
-      border: none;
-      background: linear-gradient($secondary, $primary);
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding-left: 25px;
-      padding-right: 25px;
-      color: $buttoncolour;
-      font-weight: bold;
-      font-size: small;
-      margin-top: 0px;
-      box-shadow: $buttonshadow;
+    button {
+      @include button;
     }
   }
 
