@@ -386,6 +386,8 @@ button:hover {
     top: 25px;
   }
   #menu .btn-container .order-btn {
+    position: relative;
+    bottom: 20px;
     border-radius: 30px;
     border: none;
     background: linear-gradient(#ff79da, #9356dc);
@@ -396,7 +398,6 @@ button:hover {
     color: white;
     font-weight: bold;
     font-size: medium;
-    margin-top: 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     margin: auto;
   }
@@ -408,7 +409,7 @@ button:hover {
   #menu .top-menu .heart-icon.far {
     position: absolute;
     top: 30px;
-    right: 30px;
+    right: 29px;
     color: black;
     font-size: 30px;
   }
@@ -416,7 +417,7 @@ button:hover {
     position: absolute;
     top: 45px;
     right: 36px;
-    font-size: 17px;
+    font-size: 18px;
     opacity: 0;
     color: transparent;
     background-clip: text;
@@ -467,21 +468,19 @@ button:hover {
   }
   #menu .menu-courses .menu-extra.bigger {
     position: relative;
-    bottom: 15px;
-  }
-  #menu .menu-courses .menu-extra.bigger-card {
-    position: relative;
-    top: 5px;
   }
   #menu .menu-courses .prices.bigger {
     position: relative;
-    top: 45px;
+    top: 40px !important;
   }
   #menu .menu-courses .box-contents.bigger {
     height: 90px !important;
   }
   #menu .menu-courses .box-contents.right.bigger {
     height: 90px;
+  }
+  #menu .menu-courses .box-contents.left.bigger {
+    margin-top: 10px;
   }
   #menu .menu-courses .entrees-card {
     width: 90%;
@@ -500,6 +499,7 @@ button:hover {
     flex-direction: row;
     width: 100%;
     height: 80px;
+    overflow: hidden;
   }
   #menu .menu-courses .entrees-card .box-contents h4 {
     font-family: "Roboto", sans-serif;
@@ -507,7 +507,7 @@ button:hover {
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.left {
     display: block;
-    flex-basis: 65%;
+    flex-basis: 75%;
     position: relative;
     bottom: 10px;
     padding-left: 5px;
@@ -515,17 +515,19 @@ button:hover {
   #menu .menu-courses .entrees-card .box-contents .box-contents.right {
     display: flex;
     justify-content: space-between;
-    flex-basis: 35%;
+    flex-basis: 25%;
     position: relative;
     overflow: hidden;
     width: 100%;
+    transform: translateX(50%);
+    transition: all 0.3s ease;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .prices {
-    position: absolute;
-    right: 20px;
-    bottom: -1px;
+    position: relative;
+    top: 30px;
     transition: all 0.7s ease;
     font-family: "Roboto", sans-serif;
+    float: right;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist {
     display: flex;
@@ -534,8 +536,6 @@ button:hover {
     background-color: #99e2d0;
     border-radius: 0 15px 15px 0;
     transition: all 0.7s ease;
-    position: absolute;
-    right: -75px;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist .tick {
     display: flex;
@@ -550,17 +550,14 @@ button:hover {
     margin: auto;
     color: #99e2d0;
   }
-  #menu .menu-courses .entrees-card:hover .checklist {
-    transform: translateX(-75px);
-  }
-  #menu .menu-courses .entrees-card:hover .prices {
-    transform: translateX(-60px);
+  #menu .menu-courses .entrees-card:hover .box-contents.right {
+    transform: translateX(0%);
   }
   #menu .menu-courses .entrees-card:hover .tick {
     transform: rotate(360deg);
   }
   #menu .menu-courses .entrees-card:hover .menu-extra {
-    width: 200px;
+    width: 90%;
   }
   #menu h4 {
     position: relative;
@@ -570,11 +567,11 @@ button:hover {
     font-family: "Roboto", sans-serif;
     position: relative;
     bottom: 10px;
-    max-width: 250px;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease;
   }
 }
 /*tablet*/
@@ -905,6 +902,7 @@ button:hover {
     flex-direction: row;
     width: 100%;
     height: 80px;
+    overflow: hidden;
   }
   #menu .menu-courses .entrees-card .box-contents h4 {
     font-family: "Roboto", sans-serif;
@@ -912,7 +910,7 @@ button:hover {
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.left {
     display: block;
-    flex-basis: 70%;
+    flex-basis: 80%;
     position: relative;
     bottom: 10px;
     padding-left: 5px;
@@ -920,15 +918,17 @@ button:hover {
   #menu .menu-courses .entrees-card .box-contents .box-contents.right {
     display: flex;
     justify-content: space-between;
-    flex-basis: 30%;
+    flex-basis: 20%;
     position: relative;
     overflow: hidden;
     width: 100%;
+    transform: translateX(50%);
+    transition: all 0.3s ease;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .prices {
-    position: absolute;
-    right: 20px;
-    bottom: -1px;
+    position: relative;
+    top: 30px;
+    left: 30px;
     transition: all 0.7s ease;
     font-family: "Roboto", sans-serif;
   }
@@ -939,8 +939,6 @@ button:hover {
     background-color: #99e2d0;
     border-radius: 0 15px 15px 0;
     transition: all 0.7s ease;
-    position: absolute;
-    right: -120px;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist .tick {
     display: flex;
@@ -955,17 +953,14 @@ button:hover {
     margin: auto;
     color: #99e2d0;
   }
-  #menu .menu-courses .entrees-card:hover .checklist {
-    transform: translateX(-120px);
-  }
-  #menu .menu-courses .entrees-card:hover .prices {
-    transform: translateX(-120px);
+  #menu .menu-courses .entrees-card:hover .box-contents.right {
+    transform: translateX(0%);
   }
   #menu .menu-courses .entrees-card:hover .tick {
     transform: rotate(360deg);
   }
   #menu .menu-courses .entrees-card:hover .menu-extra {
-    width: 200px;
+    width: 90%;
   }
   #menu h4 {
     position: relative;
@@ -975,11 +970,11 @@ button:hover {
     font-family: "Roboto", sans-serif;
     position: relative;
     bottom: 15px;
-    width: 280px;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1322,6 +1317,7 @@ button:hover {
     flex-direction: row;
     width: 100%;
     height: 80px;
+    overflow: hidden;
   }
   #menu .menu-courses .entrees-card .box-contents h4 {
     font-family: "Roboto", sans-serif;
@@ -1329,7 +1325,7 @@ button:hover {
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.left {
     display: block;
-    flex-basis: 70%;
+    flex-basis: 75%;
     position: relative;
     bottom: 10px;
     padding-left: 5px;
@@ -1337,17 +1333,19 @@ button:hover {
   #menu .menu-courses .entrees-card .box-contents .box-contents.right {
     display: flex;
     justify-content: space-between;
-    flex-basis: 30%;
+    flex-basis: 25%;
     position: relative;
     overflow: hidden;
     width: 100%;
+    transform: translateX(50%);
+    transition: all 0.3s ease;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .prices {
-    position: absolute;
-    right: 20px;
-    bottom: -1px;
+    position: relative;
+    top: 30px;
     transition: all 0.7s ease;
     font-family: "Roboto", sans-serif;
+    float: right;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist {
     display: flex;
@@ -1356,8 +1354,6 @@ button:hover {
     background-color: #99e2d0;
     border-radius: 0 15px 15px 0;
     transition: all 0.7s ease;
-    position: absolute;
-    right: -120px;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist .tick {
     display: flex;
@@ -1372,17 +1368,14 @@ button:hover {
     margin: auto;
     color: #99e2d0;
   }
-  #menu .menu-courses .entrees-card:hover .checklist {
-    transform: translateX(-120px);
-  }
-  #menu .menu-courses .entrees-card:hover .prices {
-    transform: translateX(-120px);
+  #menu .menu-courses .entrees-card:hover .box-contents.right {
+    transform: translateX(0%);
   }
   #menu .menu-courses .entrees-card:hover .tick {
     transform: rotate(360deg);
   }
   #menu .menu-courses .entrees-card:hover .menu-extra {
-    width: 200px;
+    width: 90%;
   }
   #menu h4 {
     position: relative;
@@ -1392,10 +1385,10 @@ button:hover {
     font-family: "Roboto", sans-serif;
     position: relative;
     bottom: 15px;
-    width: 280px;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease;
   }
 }/*# sourceMappingURL=restaurantmenu.css.map */

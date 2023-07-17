@@ -39,6 +39,31 @@ button:hover {
   margin: auto;
 }
 
+@mixin button{
+        border-radius: 30px;
+      border: none;
+      background: linear-gradient($secondary, $primary);
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 25px;
+      padding-right: 25px;
+      color: $buttoncolour;
+      font-weight: bold;
+      font-size: small;
+      margin-top: 0px;
+      box-shadow: $buttonshadow;
+}
+
+@mixin navigation{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
 @mixin nav-section {
   justify-content: center;
   align-items: center;
@@ -565,7 +590,7 @@ button:hover {
     box-sizing: border-box;
   }
   nav {
-    @include nav;
+    @include navigation;
     .logo {
       width: 50%;
     }
