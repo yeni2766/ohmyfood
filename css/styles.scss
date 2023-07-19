@@ -11,6 +11,7 @@ button:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
 #loading-spinner {
   position: fixed;
   top: 0;
@@ -29,9 +30,9 @@ button:hover {
 }
 
 .spinner {
-  border: 7px solid #f3f3f3;
+  border: 7px solid $primary;
   border-radius: 50%;
-  border-top: 7px solid #3498db;
+  border-top: 7px solid $secondary;
   width: 50px;
   height: 50px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
@@ -472,6 +473,8 @@ button:hover {
         width: 100%;
         height: fit-content;
       }
+
+   
 
       .entrees-card {
         width: 90%;
@@ -1137,7 +1140,7 @@ button:hover {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding-left: 140px;
+    padding-left: 40px;
     padding-top: 20px;
     background-color: #353535;
     display: flex;

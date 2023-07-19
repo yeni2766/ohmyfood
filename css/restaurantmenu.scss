@@ -11,6 +11,94 @@ button:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
+.entrees-card {
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.entrees-card.main-dish{
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.entrees-card.dessert-card{
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+
+.row{
+  .entrees-header{
+    opacity: 0; 
+    animation: slideIn 0.5s ease-in-out forwards;
+    animation-delay: 0.2s;
+  }
+  .main-dish-header{
+    opacity: 0; 
+    animation: slideIn 0.5s ease-in-out forwards;
+    animation-delay: 1.2s;
+  }
+  .dessert-header{
+    opacity: 0; 
+    animation: slideIn 0.5s ease-in-out forwards;
+    animation-delay: 2s;
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Move the cards slightly down */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move the cards back to their original position */
+  }
+}
+
+/* Delay each card animation */
+.entrees-card:nth-child(1) {
+  animation-delay: 0.5s; /* No delay for the first card */
+}
+
+.entrees-card:nth-child(2) {
+  animation-delay: 0.8s; 
+}
+
+.entrees-card:nth-child(3) {
+  animation-delay: 1s; 
+}
+
+.entrees-card:nth-child(4) {
+  animation-delay: 1.2s; 
+}
+
+.entrees-card.main-dish:nth-child(1) {
+  animation-delay: 1.4s; 
+}
+
+.entrees-card.main-dish:nth-child(2) {
+  animation-delay: 1.6s; 
+}
+
+.entrees-card.main-dish:nth-child(3) {
+  animation-delay: 1.8s;
+}
+
+.entrees-card.dessert-card:nth-child(1) {
+  animation-delay: 2s; 
+}
+
+.entrees-card.dessert-card:nth-child(2) {
+  animation-delay: 2.2s; 
+}
+
+.entrees-card.dessert-card:nth-child(3) {
+  animation-delay: 2.4s; 
+}
+
+
+
 #loading-spinner {
   position: fixed;
   top: 0;
@@ -25,12 +113,12 @@ button:hover {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.3s ease-in-out;
-  animation: fadeOut 3s ease-in-out forwards; /* Animation to fade out the spinner */
+  animation: fadeOut 1s ease-in-out forwards; /* Animation to fade out the spinner */
 }
 .spinner {
-  border: 7px solid #f3f3f3;
+  border: 7px solid $primary;
   border-radius: 50%;
-  border-top: 7px solid #3498db;
+  border-top: 7px solid $secondary;
   width: 50px;
   height: 50px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
@@ -432,7 +520,7 @@ button:hover {
 
       .heart-icon.fas:hover {
         opacity: 1;
-        transition: all 0.7s ease-in;
+        transition: all 0.4s ease-in;
         transform: scale(2); /* Initially set the scale to 0 */
       }
     }
@@ -905,7 +993,7 @@ button:hover {
 
       .heart-icon.fas:hover {
         opacity: 1;
-        transition: all 0.7s ease-in;
+        transition: all 0.4s ease-in;
         transform: scale(2); /* Initially set the scale to 0 */
       }
     }
@@ -1332,7 +1420,7 @@ button:hover {
 
       .heart-icon.fas:hover {
         opacity: 1;
-        transition: all 0.7s ease-in;
+        transition: all 0.4s ease-in;
         transform: scale(2); /* Initially set the scale to 0 */
       }
     }
