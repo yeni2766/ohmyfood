@@ -41,6 +41,7 @@ button:hover {
 .entrees-card {
   opacity: 0; /* Initially hide the cards */
   animation: slideIn 0.5s ease-in-out forwards;
+  cursor: pointer;
 }
 
 .entrees-card.main-dish {
