@@ -1378,14 +1378,17 @@ button:hover {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      position: absolute;
+      top:15px;
     }
   }
 
   #menu {
     width: 95%;
-    height: fit-content;
     background-color: $grey;
     position: relative;
+    z-index: 1;
+    bottom:0px;
     border-radius: 35px 35px 0 0;
     margin: 0%;
     margin: auto;
