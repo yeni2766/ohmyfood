@@ -28,48 +28,6 @@ a {
     pointer-events: none;
   }
 }
-button {
-  transition: all 0.3s ease-in;
-  cursor: pointer;
-}
-
-button:hover {
-  filter: brightness(120%);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-.entrees-card {
-  opacity: 0; /* Initially hide the cards */
-  animation: slideIn 0.5s ease-in-out forwards;
-  cursor: pointer;
-}
-
-.entrees-card.main-dish {
-  opacity: 0; /* Initially hide the cards */
-  animation: slideIn 0.5s ease-in-out forwards;
-}
-
-.entrees-card.dessert-card {
-  opacity: 0; /* Initially hide the cards */
-  animation: slideIn 0.5s ease-in-out forwards;
-}
-
-.row .entrees-header {
-  opacity: 0;
-  animation: slideIn 0.5s ease-in-out forwards;
-  animation-delay: 0.2s;
-}
-.row .main-dish-header {
-  opacity: 0;
-  animation: slideIn 0.5s ease-in-out forwards;
-  animation-delay: 1.2s;
-}
-.row .dessert-header {
-  opacity: 0;
-  animation: slideIn 0.5s ease-in-out forwards;
-  animation-delay: 2s;
-}
-
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -119,6 +77,48 @@ button:hover {
 
 .entrees-card.dessert-card:nth-child(3) {
   animation-delay: 2.4s;
+}
+
+.row .entrees-header {
+  opacity: 0;
+  animation: slideIn 0.5s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+.row .main-dish-header {
+  opacity: 0;
+  animation: slideIn 0.5s ease-in-out forwards;
+  animation-delay: 1.2s;
+}
+.row .dessert-header {
+  opacity: 0;
+  animation: slideIn 0.5s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.entrees-card {
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+  cursor: pointer;
+}
+
+.entrees-card.main-dish {
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.entrees-card.dessert-card {
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+button {
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(120%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 #loading-spinner {
@@ -201,7 +201,7 @@ button:hover {
     background-color: white;
     width: 100%;
   }
-  nav .arrow {
+  nav .nav-section .arrow {
     position: absolute;
     top: 23px;
     left: 25px;
@@ -210,10 +210,10 @@ button:hover {
   nav .nav-section.logo {
     text-align: center;
   }
-  nav .fa-map-marker-alt {
+  nav .nav-section.logo .fa-map-marker-alt {
     margin-right: 30px;
   }
-  nav .area {
+  nav .nav-section.logo .area {
     margin-right: 30px;
   }
   header {
@@ -244,166 +244,36 @@ button:hover {
     border-radius: 30px;
     border: none;
     background: linear-gradient(#ff79da, #9356dc);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 15px 25px;
     color: white;
     font-weight: bold;
     font-size: small;
     margin-top: 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
-  #instructions {
+  #instructions, #restaurants {
     width: 100%;
     height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
     margin-top: 40px;
   }
-  #instructions h2 {
-    font-family: "Roboto", sans-serif;
-    margin-left: 20px;
-    margin-bottom: 40px;
-  }
-  #instructions .card-wrapper {
+  .card-wrapper, .restaurant-card-wrapper {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-right: 0px;
-    margin-bottom: 30px;
     position: relative;
   }
-  #instructions .card {
+  .card, .restaurant-cards {
     width: 70%;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-items: center;
-    padding-left: 70px;
-    border-radius: 20px;
-    background-color: #eaeaea;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
-    position: relative;
-    right: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  #instructions span {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: #9356dc;
-    color: white;
-    text-align: center;
-    line-height: 24px;
-    position: relative;
-    z-index: 9;
-    left: 5px;
-    font-family: "Roboto", sans-serif;
-    font-size: smaller;
-  }
-  #instructions i {
-    position: absolute;
-    left: 30px;
-  }
-  #instructions .fa-store {
-    color: #9356dc;
-  }
-  #restaurants {
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background-color: #eaeaea;
-    padding-top: 50px;
-    margin-top: 50px;
-  }
-  #restaurants h2 {
-    font-family: "Roboto", sans-serif;
-    margin-left: 20px;
-  }
-  #restaurants .restaurant-card-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    bottom: 20px;
-    margin-bottom: 70px;
-  }
-  #restaurants .restaurant-cards {
-    position: relative;
-    height: 260px;
-    width: 90%;
     background-color: white;
     border-radius: 15px;
-    overflow: hidden;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     margin-top: 20px;
   }
-  #restaurants .new {
-    position: absolute;
-    top: 30px;
-    right: 15px;
-    background-color: #99e2d0;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+  h2 {
     font-family: "Roboto", sans-serif;
-    color: #0a8d6d;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-  #restaurants .restaurant-cards img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    border-radius: 15px 15px 0px 0px;
-    height: 70%;
-  }
-  #restaurants .title {
-    padding-left: 20px;
-    position: relative;
-    bottom: 5px;
-  }
-  #restaurants .title .heart-icon.far {
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    color: black;
-    font-size: 30px;
-  }
-  #restaurants .title .heart-icon.fas {
-    position: absolute;
-    top: 20px;
-    right: 26px;
-    font-size: 17px;
-    opacity: 0;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(#ff79da, #9356dc);
-    cursor: pointer;
-    transform-origin: bottom;
-  }
-  #restaurants .title .heart-icon.fas:hover {
-    opacity: 1;
-    transition: all 0.7s ease-in;
-    transform: scale(2); /* Initially set the scale to 0 */
-  }
-  #restaurants h3 {
-    font-family: "Roboto", sans-serif;
-  }
-  #restaurants .title p {
-    position: relative;
-    bottom: 17px;
-    font-family: "Roboto", sans-serif;
+    margin-left: 20px;
   }
   footer {
     width: 100%;
@@ -442,18 +312,6 @@ button:hover {
   footer .fa-hands-helping {
     font-size: 11px;
   }
-  #menus-header {
-    width: 100%;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-  }
-  #menus-header img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
   #menu {
     width: 100%;
     background-color: #eaeaea;
@@ -474,10 +332,7 @@ button:hover {
     border-radius: 30px;
     border: none;
     background: linear-gradient(#ff79da, #9356dc);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding: 15px 60px;
     color: white;
     font-weight: bold;
     font-size: medium;
@@ -512,7 +367,7 @@ button:hover {
   #menu .top-menu .heart-icon.fas:hover {
     opacity: 1;
     transition: all 0.4s ease-in;
-    transform: scale(2); /* Initially set the scale to 0 */
+    transform: scale(2);
   }
   #menu h1 {
     font-family: "Shrikhand", cursive;
@@ -641,20 +496,6 @@ button:hover {
   }
   #menu .menu-courses .entrees-card:hover .menu-extra {
     width: 90%;
-  }
-  #menu h4 {
-    position: relative;
-    font-family: "Roboto", sans-serif;
-  }
-  #menu .menu-extra {
-    font-family: "Roboto", sans-serif;
-    position: relative;
-    bottom: 10px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    transition: all 0.3s ease;
   }
 }
 /*tablet*/

@@ -1,0 +1,349 @@
+@mixin html-body-mobile {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: $grey;
+  }
+  
+  @mixin common-styles-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  // Mixin for common styles of header
+  @mixin common-styles-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $headercolour;
+    font-family: $myfont;
+    height: 270px;
+    width: 100%;
+    box-sizing: border-box;
+  
+    h1 {
+      font-size: 25px;
+      margin-top: 20px;
+    }
+  
+    p {
+      text-align: center;
+      max-width: 300px;
+      font-family: $myfont;
+      font-weight: 300;
+      font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  
+    button {
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient($secondary, $primary);
+      padding: 15px 25px;
+      color: $buttoncolour;
+      font-weight: bold;
+      font-size: small;
+      margin-top: 0px;
+      box-shadow: $buttonshadow;
+    }
+  }
+  
+  // Mixin for common styles of sections with ID #instructions and #restaurants
+  @mixin common-styles-instructions-restaurants {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  
+  // Mixin for common styles of card wrappers
+  @mixin common-styles-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  // Mixin for common styles of cards
+  @mixin common-styles-card {
+    width: 70%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: $buttonshadow;
+    margin-top: 20px;
+  }
+  
+  // Mixin for common styles of h2
+  @mixin common-styles-h2 {
+    font-family: $myfont;
+    margin-left: 20px;
+  }
+  
+  // Mixin for common styles of footer
+  @mixin common-styles-footer {
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: #353535;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  
+    h4 {
+      font-family: $logofont;
+      color: white;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+      position: relative;
+      bottom: 20px;
+    }
+  
+    a {
+      text-decoration: none;
+      color: white;
+      font-family: $myfont;
+    }
+  
+    li {
+      margin-top: 5px;
+    }
+  
+    .link-icon {
+      position: relative;
+      left: 20px;
+    }
+  
+    i {
+      color: white;
+    }
+  
+    .fa-hands-helping {
+      font-size: 11px;
+    }
+  }
+  // Mixin for common styles of sections with ID #menu
+  @mixin common-styles-menu {
+    width: 100%;
+    background-color: $grey;
+    position: relative;
+    bottom: 30px;
+    border-radius: 35px 35px 0 0;
+    margin: 0%;
+    position: relative;
+  
+    .btn-container {
+      display: flex;
+      position: relative;
+      top: 25px;
+  
+      .order-btn {
+        position: relative;
+        bottom: 20px;
+        border-radius: 30px;
+        border: none;
+        background: linear-gradient($secondary, $primary);
+        padding: 15px 60px;
+        color: $buttoncolour;
+        font-weight: bold;
+        font-size: medium;
+        box-shadow: $buttonshadow;
+        margin: auto;
+      }
+    }
+  
+    .top-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+      .heart-icon.far {
+        position: absolute;
+        top: 30px;
+        right: 29px;
+        color: black;
+        font-size: 30px;
+      }
+  
+      .heart-icon.fas {
+        position: absolute;
+        top: 45px;
+        right: 36px;
+        font-size: 18px;
+        opacity: 0;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(#ff79da, #9356dc);
+        cursor: pointer;
+         transform-origin: bottom;
+      }
+  
+      .heart-icon.fas:hover {
+        opacity: 1;
+        transition: all 0.4s ease-in;
+        transform: scale(2);
+      }
+    }
+  
+    h1 {
+      font-family: $logofont;
+      margin-top: 30px;
+      margin-left: 20px;
+      font-size: 30px;
+      max-width: 280px;
+    }
+  
+    h3 {
+      font-family: $myfont;
+      text-transform: uppercase;
+      margin-left: 20px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+  
+    h3::after {
+      content: "";
+      display: block;
+      width: 9%;
+      border-bottom: 3px solid $newbuttoncolor;
+      padding-top: 5px;
+    }
+  
+    .menu-courses {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+  
+      .menu-cards {
+        width: 100%;
+        height: fit-content;
+      }
+  
+      .entrees-card.bigger {
+        height: 90px;
+      }
+  
+      .menu-extra.bigger {
+        position: relative;
+      }
+  
+      .prices.bigger {
+        position: relative;
+        top: 40px !important;
+      }
+  
+      .box-contents.bigger {
+        height: 90px !important;
+      }
+  
+      .box-contents.right.bigger {
+        height: 90px;
+      }
+  
+      .box-contents.left.bigger {
+        margin-top: 10px;
+      }
+  
+      .entrees-card {
+        width: 90%;
+        height: fit-content;
+        margin: auto;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: $buttonshadow;
+        padding-left: 5px;
+        box-sizing: border-box;
+        margin-top: 20px;
+  
+        .box-contents {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 80px;
+          overflow: hidden;
+  
+          h4 {
+            font-family: $myfont;
+            font-size: 17px;
+          }
+  
+          .box-contents.left {
+            display: block;
+            flex-basis: 75%;
+            position: relative;
+            bottom: 10px;
+            padding-left: 5px;
+          }
+  
+          .box-contents.right {
+            display: flex;
+            justify-content: space-between;
+            flex-basis: 25%;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            transform: translateX(50%);
+            transition: all 0.3s ease;
+  
+            .prices {
+              position: relative;
+              top: 30px;
+              transition: all 0.7s ease;
+              font-family: $myfont;
+              float: right;
+            }
+  
+            .checklist {
+              display: flex;
+              height: 100%;
+              width: 50%;
+              background-color: $newbuttoncolor;
+              border-radius: 0 15px 15px 0;
+              transition: all 0.7s ease;
+  
+              .tick {
+                display: flex;
+                margin: auto;
+                background-color: white;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                transition: transform 0.9s ease-in-out;
+  
+                i {
+                  margin: auto;
+                  color: $newbuttoncolor;
+                }
+              }
+            }
+          }
+        }
+  
+        &:hover .box-contents.right {
+          transform: translateX(-0%);
+        }
+  
+        &:hover .tick {
+          transform: rotate(360deg);
+        }
+  
+        &:hover .menu-extra {
+          width: 90%;
+        }
+      }
+    }
+  }

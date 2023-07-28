@@ -1,161 +1,24 @@
 @import "variables";
 @import "standard";
 @import "animation";
+@import 'mixins-mobile';
+@import 'components';
 
-button {
-  transition: all 0.3s ease-in;
-  cursor: pointer;
-}
-button:hover {
-  filter: brightness(120%);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-.entrees-card {
-  opacity: 0; /* Initially hide the cards */
-  animation: slideIn 0.5s ease-in-out forwards;
-  cursor: pointer;;
-}
-
-.entrees-card.main-dish{
-  opacity: 0; /* Initially hide the cards */
-  animation: slideIn 0.5s ease-in-out forwards;
-}
-
-.entrees-card.dessert-card{
-  opacity: 0; /* Initially hide the cards */
-  animation: slideIn 0.5s ease-in-out forwards;
-}
-
-
-.row{
-  .entrees-header{
-    opacity: 0; 
-    animation: slideIn 0.5s ease-in-out forwards;
-    animation-delay: 0.2s;
-  }
-  .main-dish-header{
-    opacity: 0; 
-    animation: slideIn 0.5s ease-in-out forwards;
-    animation-delay: 1.2s;
-  }
-  .dessert-header{
-    opacity: 0; 
-    animation: slideIn 0.5s ease-in-out forwards;
-    animation-delay: 2s;
-  }
-}
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px); /* Move the cards slightly down */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Move the cards back to their original position */
-  }
-}
-
-/* Delay each card animation */
-.entrees-card:nth-child(1) {
-  animation-delay: 0.5s; /* No delay for the first card */
-}
-
-.entrees-card:nth-child(2) {
-  animation-delay: 0.8s; 
-}
-
-.entrees-card:nth-child(3) {
-  animation-delay: 1s; 
-}
-
-.entrees-card:nth-child(4) {
-  animation-delay: 1.2s; 
-}
-
-.entrees-card.main-dish:nth-child(1) {
-  animation-delay: 1.4s; 
-}
-
-.entrees-card.main-dish:nth-child(2) {
-  animation-delay: 1.6s; 
-}
-
-.entrees-card.main-dish:nth-child(3) {
-  animation-delay: 1.8s;
-}
-
-.entrees-card.dessert-card:nth-child(1) {
-  animation-delay: 2s; 
-}
-
-.entrees-card.dessert-card:nth-child(2) {
-  animation-delay: 2.2s; 
-}
-
-.entrees-card.dessert-card:nth-child(3) {
-  animation-delay: 2.4s; 
-}
-
-
-
-#loading-spinner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.3s ease-in-out;
-  animation: fadeOut 1s ease-in-out forwards; /* Animation to fade out the spinner */
-}
-.spinner {
-  border: 7px solid $primary;
-  border-radius: 50%;
-  border-top: 7px solid $secondary;
-  width: 50px;
-  height: 50px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-  margin: auto;
-}
 
 @media screen and (max-width: $mobile) {
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-color: $grey;
+html,
+body {
+@include html-body-mobile;
+}
+nav {
+ @include common-styles-nav;
+  .logo {
+    width: 50%;
   }
-
-  nav {
+  .nav-section {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    .logo {
-      width: 50%;
-    }
-    .nav-section {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .nav-section.location {
+    &.location {
       justify-content: center;
       align-items: center;
       background-color: $grey;
@@ -165,16 +28,14 @@ button:hover {
       font-family: $myfont;
       font-weight: $boldfont;
       display: inline;
+      span {
+        display: inline;
+        text-align: center;
+        position: relative;
+        top: 15px;
+      }
     }
-
-    .nav-section.location span {
-      display: inline;
-      text-align: center;
-      position: relative;
-      top: 15px;
-    }
-
-    .nav-section.logo-section {
+    &.logo-section {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -183,512 +44,52 @@ button:hover {
       background-color: white;
       width: 100%;
     }
-
     .arrow {
       position: absolute;
       top: 23px;
       left: 25px;
       font-size: 25px;
     }
-
-    .nav-section.logo {
+    &.logo {
       text-align: center;
-    }
-
-    .fa-map-marker-alt {
-      margin-right: 30px;
-    }
-
-    .area {
-      margin-right: 30px;
-    }
-  }
-  header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: $headercolour;
-    font-family: $myfont;
-    height: 270px;
-    width: 100%;
-    box-sizing: border-box;
-
-    h1 {
-      font-size: 25px;
-      margin-top: 20px;
-    }
-
-    p {
-      text-align: center;
-      max-width: 300px;
-      font-family: $myfont;
-      font-weight: 300;
-      font-size: 18px;
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      border-radius: 30px;
-      border: none;
-      background: linear-gradient($secondary, $primary);
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding-left: 25px;
-      padding-right: 25px;
-      color: $buttoncolour;
-      font-weight: bold;
-      font-size: small;
-      margin-top: 0px;
-      box-shadow: $buttonshadow;
-    }
-  }
-
-  #instructions {
-    width: 100%;
-    height: fit-content;
-    overflow: hidden;
-    margin-top: 40px;
-
-    h2 {
-      font-family: $myfont;
-      margin-left: 20px;
-      margin-bottom: 40px;
-    }
-
-    .card-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding-right: 0px;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .card {
-      width: 70%;
-      height: 80px;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      align-items: center;
-      padding-left: 70px;
-      border-radius: 20px;
-      background-color: $grey;
-      font-weight: bold;
-      font-family: $myfont;
-      position: relative;
-      right: 10px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    span {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-color: $primary;
-      color: white;
-      text-align: center;
-      line-height: 24px;
-      position: relative;
-      z-index: 9;
-      left: 5px;
-      font-family: $myfont;
-      font-size: smaller;
-    }
-    i {
-      position: absolute;
-      left: 30px;
-    }
-
-    .fa-store {
-      color: $primary;
-    }
-  }
-
-  #restaurants {
-    width: 100%;
-    height: fit-content;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background-color: $grey;
-    padding-top: 50px;
-    margin-top: 50px;
-
-    h2 {
-      font-family: $myfont;
-      margin-left: 20px;
-    }
-
-    .restaurant-card-wrapper {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      bottom: 20px;
-      margin-bottom: 70px;
-    }
-
-    .restaurant-cards {
-      position: relative;
-      height: 260px;
-      width: 90%;
-      background-color: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: $buttonshadow;
-      margin-top: 20px;
-    }
-
-    .new {
-      position: absolute;
-      top: 30px;
-      right: 15px;
-      background-color: $newbuttoncolor;
-      padding-left: 30px;
-      padding-right: 30px;
-      padding-top: 7px;
-      padding-bottom: 7px;
-      font-family: $myfont;
-      color: $newbuttontitlecolor;
-      box-shadow: $buttonshadow;
-    }
-
-    .restaurant-cards img {
-      object-fit: cover;
-      width: $imgwidth;
-      border-radius: $borderimage;
-      height: $imgheight;
-    }
-
-    .title {
-      padding-left: 20px;
-      position: relative;
-      bottom: 5px;
-      .heart-icon.far {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        color: black;
-        font-size: 30px;
+      .fa-map-marker-alt {
+        margin-right: 30px;
       }
-      .heart-icon.fas {
-        position: absolute;
-        top: 20px;
-        right: 26px;
-        font-size: 17px;
-        opacity: 0;
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient(#ff79da, #9356dc);
-        cursor: pointer;
-        transform-origin: bottom;
+      .area {
+        margin-right: 30px;
       }
-
-      .heart-icon.fas:hover {
-        opacity: 1;
-        transition: all 0.7s ease-in;
-        transform: scale(2); /* Initially set the scale to 0 */
-      }
-    }
-    h3 {
-      font-family: $myfont;
-    }
-    .title p {
-      position: relative;
-      bottom: 17px;
-      font-family: $myfont;
-    }
-  }
-
-  footer {
-    width: 100%;
-    padding-left: 20px;
-    padding-top: 20px;
-    background-color: #353535;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-
-    h4 {
-      font-family: $logofont;
-      color: white;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      position: relative;
-      bottom: 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-      font-family: $myfont;
-    }
-
-    li {
-      margin-top: 5px;
-    }
-    .link-icon {
-      position: relative;
-      left: 20px;
-    }
-
-    i {
-      color: white;
-    }
-    .fa-hands-helping {
-      font-size: 11px;
-    }
-  }
-
-  #menus-header {
-    width: 100%;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  #menu {
-    width: 100%;
-    background-color: $grey;
-    position: relative;
-    bottom: 30px;
-    border-radius: 35px 35px 0 0;
-    margin: 0%;
-    position: relative;
-
-    .btn-container {
-      display: flex;
-      position: relative;
-      top: 25px;
-      .order-btn {
-        position: relative;
-        bottom:20px;
-        border-radius: 30px;
-        border: none;
-        background: linear-gradient($secondary, $primary);
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 60px;
-        padding-right: 60px;
-        color: $buttoncolour;
-        font-weight: bold;
-        font-size: medium;
-        box-shadow: $buttonshadow;
-        margin: auto;
-      }
-    }
-
-    .top-menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .top-menu {
-      .heart-icon.far {
-        position: absolute;
-        top: 30px;
-        right: 29px;
-        color: black;
-        font-size: 30px;
-      }
-      .heart-icon.fas {
-        position: absolute;
-        top: 45px;
-        right: 36px;
-        font-size: 18px;
-        opacity: 0;
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient(#ff79da, #9356dc);
-        cursor: pointer;
-        transform-origin: bottom;
-      }
-
-      .heart-icon.fas:hover {
-        opacity: 1;
-        transition: all 0.4s ease-in;
-        transform: scale(2); /* Initially set the scale to 0 */
-      }
-    }
-
-    h1 {
-      font-family: $logofont;
-      margin-top: 30px;
-      margin-left: 20px;
-      font-size: 30px;
-      max-width: 280px;
-    }
-    h3 {
-      font-family: $myfont;
-      text-transform: uppercase;
-      margin-left: 20px;
-      font-weight: 500;
-      font-size: 15px;
-    }
-
-    h3::after {
-      content: "";
-      display: block;
-      width: 9%;
-      border-bottom: 3px solid $newbuttoncolor;
-      padding-top: 5px;
-    }
-
-    .menu-courses {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      margin-bottom: 30px;
-
-      .menu-cards {
-        width: 100%;
-        height: fit-content;
-      }
-      .entrees-card.bigger {
-        height: 90px;
-      }
-
-      .menu-extra.bigger {
-        position: relative;
-      }
-
-      .prices.bigger {
-        position: relative;
-        top: 40px  !important;
-      }
-
-      .box-contents.bigger {
-        height: 90px !important;
-      }
-
-      .box-contents.right.bigger {
-        height: 90px;
-      }
-
-      .box-contents.left.bigger {
-        margin-top: 10px;
-      }
-
-      .entrees-card {
-        width: 90%;
-        height: fit-content;
-        margin: auto;
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: $buttonshadow;
-        padding-left: 5px;
-        box-sizing: border-box;
-        margin-top: 20px;
-
-        .box-contents {
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          height: 80px;
-          overflow: hidden;
-
-          h4 {
-            font-family: $myfont;
-            font-size: 17px;
-          }
-
-
-          .box-contents.left {
-            display: block;
-            flex-basis: 75%;
-            position: relative;
-            bottom: 10px;
-            padding-left: 5px;
-          }
-          .box-contents.right {
-            display: flex;
-            justify-content: space-between;
-            flex-basis: 25%;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            transform: translateX(50%);
-            transition: all 0.3s ease;
-
-            .prices {
-              position: relative;
-              top: 30px;
-              transition: all 0.7s ease;
-              font-family: $myfont;
-              float: right;
-            }
-
-            .checklist {
-              display: flex;
-              height: 100%;
-              width: 50%;
-              background-color: $newbuttoncolor;
-              border-radius: 0 15px 15px 0;
-              transition: all 0.7s ease;
-
-              .tick {
-                display: flex;
-                margin: auto;
-                background-color: white;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                transition: transform 0.9s ease-in-out;
-                i {
-                  margin: auto;
-                  color: $newbuttoncolor;
-                }
-              }
-            }
-          }
-        }
-
-        &:hover .box-contents.right{
-          transform: translateX(-0%);
-         }
-         
-        &:hover .tick {
-          transform: rotate(360deg);
-        }
-
-        &:hover .menu-extra {
-          width: 90%;
-        }
-      }
-    }
-
-    h4 {
-      position: relative;
-      font-family: $myfont;
-    }
-
-    .menu-extra {
-      font-family: $myfont;
-      position: relative;
-      bottom: 10px;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      transition: all 0.3s ease;
     }
   }
 }
+
+header {
+  @include common-styles-header;
+}
+
+#instructions, #restaurants {
+@include common-styles-instructions-restaurants;
+}
+
+.card-wrapper, .restaurant-card-wrapper {
+@include common-styles-card-wrapper
+}
+
+.card, .restaurant-cards {
+ @include common-styles-card;
+}
+
+h2 {
+  @include common-styles-h2;
+}
+
+footer {
+  @include common-styles-footer;
+}
+#menu{
+@include common-styles-menu;
+}
+}
+
 
 /*tablet*/
 @media only screen and (min-width: $mintablet) and (max-width: $maxtablet) {
