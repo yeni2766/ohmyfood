@@ -1,0 +1,18 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin rounded-box {
+    border-radius: 15px;
+  }
+  @mixin gradient-button {
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(#ffa133, #ff5733);
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }

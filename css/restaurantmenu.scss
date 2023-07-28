@@ -2,7 +2,9 @@
 @import "standard";
 @import "animation";
 @import 'mixins-mobile';
+@import 'mixinstablet';
 @import 'components';
+@import 'mixinsdesktop';
 
 
 @media screen and (max-width: $mobile) {
@@ -93,450 +95,413 @@ footer {
 
 /*tablet*/
 @media only screen and (min-width: $mintablet) and (max-width: $maxtablet) {
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-color: $grey;
+  // Define common styles for HTML and BODY
+html, body {
+@include html-body-mobile;
+} 
+
+// Define common styles for nav
+nav {
+  @include common-styles-nav;
+
+  .logo {
+    width: 50%;
   }
 
-  nav {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    .logo {
-      width: 50%;
-    }
-    .nav-section {
-      display: flex;
-      flex-direction: column;
-    }
+  .nav-section {
+    @include flex-container;
 
-    .nav-section.location {
+    &.location {
       justify-content: center;
       align-items: center;
       background-color: $grey;
       width: 100%;
       height: 50px;
       border-top: 5px solid $bordertop;
-      font-family: $myfont;
-      font-weight: $boldfont;
+      @include font-style;
       display: inline;
+
+      span {
+        display: inline;
+        text-align: center;
+        position: relative;
+        top: 15px;
+      }
     }
 
-    .nav-section.location span {
-      display: inline;
-      text-align: center;
-      position: relative;
-      top: 15px;
-    }
-
-    .nav-section.logo-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &.logo-section {
+      @include flex-container;
       height: 60px;
       padding: 5px;
       background-color: white;
       width: 100%;
-    }
 
-    .arrow {
-      position: absolute;
-      top: 23px;
-      left: 25px;
-      font-size: 25px;
-    }
+      .arrow {
+        position: absolute;
+        top: 23px;
+        left: 25px;
+        font-size: 25px;
+      }
 
-    .nav-section.logo {
-      text-align: center;
-    }
-
-    .fa-map-marker-alt {
-      margin-right: 30px;
-    }
-
-    .area {
-      margin-right: 30px;
+      &.logo {
+        text-align: center;
+        .fa-map-marker-alt {
+          margin-right: 30px;
+        }
+        .area {
+          margin-right: 30px;
+        }
+      }
     }
   }
-  header {
-    display: flex;
+}
+
+// Define common styles for header
+header {
+  @include flex-container;
+  flex-direction: column;
+  background-color: $headercolour;
+  @include font-style;
+  height: 270px;
+  width: 100%;
+  box-sizing: border-box;
+
+  h1 {
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+  p {
+    text-align: center;
+    max-width: 300px;
+    @include font-style;
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    @include gradient-button;
+    margin-top: 0px;
+  }
+}
+
+// Define common styles for #restaurants
+#restaurants {
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  @include flex-container;
+  flex-direction: column;
+  background-color: $grey;
+  padding-top: 50px;
+  margin-top: 50px;
+
+  h2 {
+    @include font-style;
+    margin-left: 20px;
+  }
+
+  .restaurant-card-wrapper {
+    @include flex-container;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: $headercolour;
-    font-family: $myfont;
-    height: 270px;
-    width: 100%;
-    box-sizing: border-box;
-
-    h1 {
-      font-size: 25px;
-      margin-top: 20px;
-    }
-
-    p {
-      text-align: center;
-      max-width: 300px;
-      font-family: $myfont;
-      font-weight: 300;
-      font-size: 18px;
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      border-radius: 30px;
-      border: none;
-      background: linear-gradient($secondary, $primary);
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding-left: 25px;
-      padding-right: 25px;
-      color: $buttoncolour;
-      font-weight: bold;
-      font-size: small;
-      margin-top: 0px;
-      box-shadow: $buttonshadow;
-    }
+    position: relative;
+    bottom: 20px;
+    margin-bottom: 70px;
   }
 
-  #restaurants {
-    width: 100%;
-    height: fit-content;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background-color: $grey;
-    padding-top: 50px;
-    margin-top: 50px;
-
-    h2 {
-      font-family: $myfont;
-      margin-left: 20px;
-    }
-
-    .restaurant-card-wrapper {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      bottom: 20px;
-      margin-bottom: 70px;
-    }
-
-    .restaurant-cards {
-      position: relative;
-      height: 260px;
-      width: 90%;
-      background-color: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: $buttonshadow;
-      margin-top: 20px;
-    }
-
-    .new {
-      position: absolute;
-      top: 30px;
-      right: 15px;
-      background-color: $newbuttoncolor;
-      padding-left: 30px;
-      padding-right: 30px;
-      padding-top: 7px;
-      padding-bottom: 7px;
-      font-family: $myfont;
-      color: $newbuttontitlecolor;
-      box-shadow: $buttonshadow;
-    }
-
-    .restaurant-cards img {
-      object-fit: cover;
-      width: $imgwidth;
-      border-radius: $borderimage;
-      height: $imgheight;
-    }
-
-    .title {
-      padding-left: 20px;
-      position: relative;
-      bottom: 5px;
-    }
-
-    h3 {
-      font-family: $myfont;
-    }
-    .title p {
-      position: relative;
-      bottom: 17px;
-      font-family: $myfont;
-    }
+  .restaurant-cards {
+    @include restaurant-card;
   }
-  footer {
-    width: 100%;
+
+  .new {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    background-color: $newbuttoncolor;
+    padding: 7px 30px;
+    @include font-style;
+    color: $newbuttontitlecolor;
+  }
+
+  .restaurant-cards img {
+    object-fit: cover;
+    width: $imgwidth;
+    border-radius: $borderimage;
+    height: $imgheight;
+  }
+
+  .title {
     padding-left: 20px;
-    padding-top: 20px;
-    background-color: #353535;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-
-    h4 {
-      font-family: $logofont;
-      color: white;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      position: relative;
-      bottom: 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-      font-family: $myfont;
-    }
-
-    li {
-      margin-top: 5px;
-    }
-    .link-icon {
-      position: relative;
-      left: 20px;
-    }
-
-    i {
-      color: white;
-    }
-    .fa-hands-helping {
-      font-size: 11px;
-    }
+    position: relative;
+    bottom: 5px;
   }
 
-  #menus-header {
-    width: 100%;
-    height: 400px;
-    position: relative;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+  h3 {
+    @include font-style;
+    text-transform: uppercase;
+    margin-left: 20px;
 
-  #menu {
-    width: 100%;
-    background-color: $grey;
-    position: relative;
-    bottom: 30px;
-    border-radius: 35px 35px 0 0;
-    margin: 0%;
-    position: relative;
-    .btn-container {
-      display: flex;
-      position: relative;
-      top: 25px;
-      .order-btn {
-        border-radius: 30px;
-        border: none;
-        background: linear-gradient($secondary, $primary);
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 60px;
-        padding-right: 60px;
-        color: $buttoncolour;
-        font-weight: bold;
-        font-size: medium;
-        box-shadow: $buttonshadow;
-        margin: auto;
-        margin-bottom: 40px;
-      }
-    }
-
-    .top-menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .top-menu {
-      .heart-icon.far {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        color: black;
-        font-size: 30px;
-      }
-      .heart-icon.fas {
-        position: absolute;
-        top: 45px;
-        right: 36px;
-        font-size: 17px;
-        opacity: 0;
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient(#ff79da, #9356dc);
-        cursor: pointer;
-        transform-origin: bottom;
-      }
-
-      .heart-icon.fas:hover {
-        opacity: 1;
-        transition: all 0.4s ease-in;
-        transform: scale(2); /* Initially set the scale to 0 */
-      }
-    }
-
-    h1 {
-      font-family: $logofont;
-      margin-top: 30px;
-      margin-left: 20px;
-      font-size: 25px;
-    }
-    h3 {
-      font-family: $myfont;
-      text-transform: uppercase;
-      margin-left: 20px;
-      font-weight: 500;
-      font-size: 15px;
-    }
-
-    h3::after {
+    &::after {
       content: "";
       display: block;
       width: 5%;
       border-bottom: 3px solid $newbuttoncolor;
       padding-top: 5px;
     }
+  }
 
-    .menu-courses {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      margin-bottom: 30px;
+  .menu-extra {
+    @include font-style;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+  }
+}
 
-      .menu-cards {
-        width: 100%;
-        height: fit-content;
-      }
-      .entrees-card {
-        width: 95%;
-        height: 80px;
-        margin: auto;
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: $buttonshadow;
-        padding-left: 5px;
-        box-sizing: border-box;
-        margin-top: 20px;
+// Define common styles for footer
+footer {
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 20px;
+  background-color: #353535;
+  @include flex-container;
+  flex-direction: column;
+  margin: 0;
 
-        .box-contents {
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          height: 80px;
-          overflow: hidden;
+  h4 {
+    @include font-style;
+    color: white;
+  }
 
-          h4 {
-            font-family: $myfont;
-            font-size: 19px;
-          }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    bottom: 20px;
+  }
 
+  a {
+    text-decoration: none;
+    color: white;
+    @include font-style;
+  }
 
-          .box-contents.left {
-            display: block;
-            flex-basis: 80%;
-            position: relative;
-            bottom: 10px;
-            padding-left: 5px;
-          }
-          .box-contents.right {
-            display: flex;
-            justify-content: space-between;
-            flex-basis: 20%;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            transform: translateX(50%);
-            transition: all 0.3s ease;
+  li {
+    margin-top: 5px;
+  }
 
-            .prices {
-              position: relative;
-              top: 30px;
-              left:30px;
-              transition: all 0.7s ease;
-              font-family: $myfont;
-            }
+  .link-icon {
+    position: relative;
+    left: 20px;
+  }
 
-            .checklist {
-              display: flex;
-              height: 100%;
-              width: 50%;
-              background-color: $newbuttoncolor;
-              border-radius: 0 15px 15px 0;
-              transition: all 0.7s ease;
+  i {
+    color: white;
+  }
 
-              .tick {
-                display: flex;
-                margin: auto;
-                background-color: white;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                transition: transform 0.9s ease-in-out;
-                i {
-                  margin: auto;
-                  color: $newbuttoncolor;
-                }
-              }
-            }
-          }
-        }
+  .fa-hands-helping {
+    font-size: 11px;
+  }
+}
 
-        &:hover .box-contents.right{
-          transform: translateX(-0%);
-         }
-  
+// Define common styles for #menus-header
+#menus-header {
+  width: 100%;
+  height: 400px;
+  position: relative;
 
-        &:hover .tick {
-          transform: rotate(360deg);
-        }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 
-        &:hover .menu-extra {
-          width: 90%;
-        }
-      }
-    }
+// Define common styles for #menu
+#menu {
+  width: 100%;
+  background-color: $grey;
+  position: relative;
+  bottom: 30px;
+  border-radius: 35px 35px 0 0;
+  margin: 0%;
+  position: relative;
 
-    h4 {
-      position: relative;
-      font-family: $myfont;
-    }
+  .btn-container {
+    @include flex-container;
+    position: relative;
+    top: 25px;
 
-    .menu-extra {
-      font-family: $myfont;
-      position: relative;
-      bottom: 15px;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      transition: all 0.3s ease;
+    .order-btn {
+      @include gradient-button;
+      margin-bottom: 40px;
     }
   }
+
+  .top-menu {
+    @include flex-container;
+    flex-direction: row;
+
+    .heart-icon.far {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: black;
+      font-size: 30px;
+    }
+
+    .heart-icon.fas {
+      position: absolute;
+      top: 45px;
+      right: 36px;
+      font-size: 17px;
+      opacity: 0;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-image: linear-gradient(#ff79da, #9356dc);
+      cursor: pointer;
+      transform-origin: bottom;
+    }
+
+    .heart-icon.fas:hover {
+      opacity: 1;
+      transition: all 0.4s ease-in;
+      transform: scale(2);
+    }
+  }
+
+  h1 {
+    @include font-style;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 25px;
+  }
+
+  h3 {
+    @include font-style;
+    text-transform: uppercase;
+    margin-left: 20px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 5%;
+      border-bottom: 3px solid $newbuttoncolor;
+      padding-top: 5px;
+    }
+  }
+
+  .menu-courses {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+
+    .menu-cards {
+      width: 100%;
+      height: fit-content;
+    }
+
+    .entrees-card {
+      width: 95%;
+      height: 80px;
+      margin: auto;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: $buttonshadow;
+      padding-left: 5px;
+      box-sizing: border-box;
+      margin-top: 20px;
+
+      .box-contents {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 80px;
+        overflow: hidden;
+
+        h4 {
+          @include menu-font;
+        }
+
+        .box-contents.left {
+          display: block;
+          flex-basis: 80%;
+          position: relative;
+          bottom: 10px;
+          padding-left: 5px;
+        }
+
+        .box-contents.right {
+          display: flex;
+          justify-content: space-between;
+          flex-basis: 20%;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          transform: translateX(50%);
+          transition: all 0.3s ease;
+
+          .prices {
+            position: relative;
+            top: 30px;
+            left: 30px;
+            transition: all 0.7s ease;
+            @include font-style;
+          }
+
+          .checklist {
+            @include flex-container;
+            height: 100%;
+            width: 50%;
+            background-color: $newbuttoncolor;
+            border-radius: 0 15px 15px 0;
+            transition: all 0.7s ease;
+
+            .tick {
+              @include checkbox;
+            }
+          }
+        }
+      }
+
+      &:hover .box-contents.right {
+        transform: translateX(-0%);
+      }
+
+      &:hover .tick {
+        transform: rotate(360deg);
+      }
+
+      &:hover .menu-extra {
+        width: 90%;
+      }
+    }
+  }
+
+  h4 {
+    @include font-style;
+    position: relative;
+  }
+
+  .menu-extra {
+    @include font-style;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+  }
+}
 }
 
 @media screen and (min-width: $desktop) {
@@ -548,7 +513,7 @@ footer {
     box-sizing: border-box;
     width: 100%;
   }
-
+  
   nav {
     display: flex;
     flex-direction: column;
@@ -557,62 +522,63 @@ footer {
     width: 100%;
     box-sizing: border-box;
     position: relative;
+  
     .logo {
       width: 50%;
     }
+  
     .nav-section {
       display: flex;
       flex-direction: column;
-    }
-
-    .nav-section.location {
-      justify-content: center;
-      align-items: center;
-      background-color: $grey;
-      width: 100%;
-      height: 50px;
-      border-top: 5px solid $bordertop;
-      font-family: $myfont;
-      font-weight: $boldfont;
-      display: inline;
-    }
-
-    .nav-section.location span {
-      display: inline;
-      text-align: center;
-      position: relative;
-      top: 15px;
-    }
-
-    .nav-section.logo-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 60px;
-      padding: 5px;
-      background-color: white;
-      width: 100%;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 23px;
-      left: 25px;
-      font-size: 25px;
-    }
-
-    .nav-section.logo {
-      text-align: center;
-    }
-
-    .fa-map-marker-alt {
-      margin-right: 30px;
-    }
-
-    .area {
-      margin-right: 30px;
+  
+      &.location {
+        justify-content: center;
+        align-items: center;
+        background-color: $grey;
+        width: 100%;
+        height: 50px;
+        border-top: 5px solid $bordertop;
+        font-family: $myfont;
+        font-weight: $boldfont;
+        display: inline;
+  
+        span {
+          display: inline;
+          text-align: center;
+          position: relative;
+          top: 15px;
+        }
+      }
+  
+      &.logo-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        padding: 5px;
+        background-color: white;
+        width: 100%;
+  
+        .arrow {
+          position: absolute;
+          top: 23px;
+          left: 25px;
+          font-size: 25px;
+        }
+  
+        &.logo {
+          text-align: center;
+          .fa-map-marker-alt {
+            margin-right: 30px;
+          }
+          .area {
+            margin-right: 30px;
+          }
+        }
+      }
     }
   }
+  
   header {
     display: flex;
     flex-direction: column;
@@ -623,12 +589,12 @@ footer {
     height: 270px;
     width: 100%;
     box-sizing: border-box;
-
+  
     h1 {
       font-size: 25px;
       margin-top: 20px;
     }
-
+  
     p {
       text-align: center;
       max-width: 300px;
@@ -638,23 +604,12 @@ footer {
       margin-top: 30px;
       margin-bottom: 20px;
     }
-
+  
     button {
-      border-radius: 30px;
-      border: none;
-      background: linear-gradient($secondary, $primary);
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding-left: 25px;
-      padding-right: 25px;
-      color: $buttoncolour;
-      font-weight: bold;
-      font-size: small;
-      margin-top: 0px;
-      box-shadow: $buttonshadow;
+     @include gradient-button;
     }
   }
-
+  
   #restaurants {
     width: 100%;
     height: fit-content;
@@ -664,12 +619,12 @@ footer {
     background-color: $grey;
     padding-top: 50px;
     margin-top: 50px;
-
+  
     h2 {
       font-family: $myfont;
       margin-left: 20px;
     }
-
+  
     .restaurant-card-wrapper {
       display: flex;
       justify-content: center;
@@ -679,18 +634,18 @@ footer {
       bottom: 20px;
       margin-bottom: 70px;
     }
-
+  
     .restaurant-cards {
       position: relative;
       height: 260px;
       width: 90%;
       background-color: white;
-      border-radius: 15px;
+      @include rounded-box;
       overflow: hidden;
       box-shadow: $buttonshadow;
       margin-top: 20px;
     }
-
+  
     .new {
       position: absolute;
       top: 30px;
@@ -704,29 +659,31 @@ footer {
       color: $newbuttontitlecolor;
       box-shadow: $buttonshadow;
     }
-
+  
     .restaurant-cards img {
       object-fit: cover;
       width: $imgwidth;
-      border-radius: $borderimage;
+      @include rounded-box;
       height: $imgheight;
     }
-
+  
     .title {
       padding-left: 20px;
       position: relative;
       bottom: 5px;
     }
+  
     h3 {
       font-family: $myfont;
     }
+  
     .title p {
       position: relative;
       bottom: 17px;
       font-family: $myfont;
     }
   }
-
+  
   footer {
     width: 100%;
     height: 100%;
@@ -736,25 +693,25 @@ footer {
     display: flex;
     flex-direction: column;
     margin: 0;
-
+  
     h4 {
       font-family: $logofont;
       color: white;
     }
-
+  
     ul {
       list-style-type: none;
       padding: 0;
       position: relative;
       bottom: 20px;
     }
-
+  
     a {
       text-decoration: none;
       color: white;
       font-family: $myfont;
     }
-
+  
     li {
       margin-top: 5px;
     }
@@ -762,7 +719,7 @@ footer {
       position: relative;
       left: 20px;
     }
-
+  
     i {
       color: white;
     }
@@ -770,7 +727,7 @@ footer {
       font-size: 11px;
     }
   }
-
+  
   #menus-header {
     width: 100%;
     height: 350px;
@@ -780,27 +737,27 @@ footer {
       height: 100%;
       object-fit: cover;
       position: absolute;
-      top:15px;
+      top: 15px;
     }
   }
-
+  
   #menu {
     width: 95%;
     background-color: $grey;
     position: relative;
     z-index: 1;
-    bottom:0px;
+    bottom: 0px;
     border-radius: 35px 35px 0 0;
     margin: 0%;
     margin: auto;
-
+  
     .row {
       display: flex;
       flex-direction: row;
       padding: 20px;
       position: relative;
     }
-
+  
     .top-menu {
       .heart-icon.far {
         position: absolute;
@@ -822,14 +779,14 @@ footer {
         cursor: pointer;
         transform-origin: bottom;
       }
-
+  
       .heart-icon.fas:hover {
         opacity: 1;
         transition: all 0.4s ease-in;
         transform: scale(2); /* Initially set the scale to 0 */
       }
     }
-
+  
     .btn-container {
       display: flex;
       position: relative;
@@ -851,20 +808,20 @@ footer {
         bottom: 50px;
       }
     }
-
+  
     .top-menu {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
-
+  
     .heart-icon {
       position: absolute;
       top: 35px;
       right: 40px;
       font-size: 25px;
     }
-
+  
     h1 {
       font-family: $logofont;
       margin-top: 30px;
@@ -877,27 +834,26 @@ footer {
       margin-left: 20px;
       font-weight: 500;
       font-size: 15px;
+      &::after {
+        content: "";
+        display: block;
+        width: 9%;
+        border-bottom: 3px solid $newbuttoncolor;
+        padding-top: 5px;
+      }
     }
-
-    h3::after {
-      content: "";
-      display: block;
-      width: 9%;
-      border-bottom: 3px solid $newbuttoncolor;
-      padding-top: 5px;
-    }
-
+  
     .menu-courses {
       width: 100%;
       height: 100%;
       box-sizing: border-box;
       margin-bottom: 30px;
-
+  
       .menu-cards {
         width: 100%;
         height: fit-content;
       }
-
+  
       .entrees-card {
         width: 95%;
         height: 80px;
@@ -908,19 +864,19 @@ footer {
         padding-left: 5px;
         box-sizing: border-box;
         margin-top: 20px;
-
+  
         .box-contents {
           display: flex;
           flex-direction: row;
           width: 100%;
           height: 80px;
           overflow: hidden;
-
+  
           h4 {
             font-family: $myfont;
             font-size: 18px;
           }
-
+  
           .box-contents.left {
             display: block;
             flex-basis: 75%;
@@ -937,7 +893,7 @@ footer {
             width: 100%;
             transform: translateX(50%);
             transition: all 0.3s ease;
-
+  
             .prices {
               position: relative;
               top: 30px;
@@ -945,7 +901,7 @@ footer {
               font-family: $myfont;
               float: right;
             }
-
+  
             .checklist {
               display: flex;
               height: 100%;
@@ -953,8 +909,7 @@ footer {
               background-color: $newbuttoncolor;
               border-radius: 0 15px 15px 0;
               transition: all 0.7s ease;
-            
-
+  
               .tick {
                 display: flex;
                 margin: auto;
@@ -971,26 +926,26 @@ footer {
             }
           }
         }
-
-       &:hover .box-contents.right{
-        transform: translateX(-0%);
-       }
-
+  
+        &:hover .box-contents.right {
+          transform: translateX(-0%);
+        }
+  
         &:hover .tick {
           transform: rotate(360deg);
         }
-
+  
         &:hover .menu-extra {
           width: 90%;
         }
       }
     }
-
+  
     h4 {
       position: relative;
       font-family: $myfont;
     }
-
+  
     .menu-extra {
       font-family: $myfont;
       position: relative;
@@ -1002,4 +957,5 @@ footer {
       transition: all 0.3s ease;
     }
   }
+  
 }

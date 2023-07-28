@@ -1,0 +1,59 @@
+// Define common styles for flex containers
+@mixin flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // Define mixin for common font family and weight
+  @mixin font-style {
+    font-family: $myfont;
+    font-weight: $boldfont;
+  }
+  
+  // Define mixin for common gradient button styles
+  @mixin gradient-button {
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient($secondary, $primary);
+    padding: 15px 60px;
+    color: $buttoncolour;
+    font-weight: bold;
+    font-size: small;
+    box-shadow: $buttonshadow;
+    margin: auto;
+  }
+  
+  // Define mixin for common restaurant card styles
+  @mixin restaurant-card {
+    position: relative;
+    height: 260px;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: $buttonshadow;
+    margin-top: 20px;
+  }
+  
+  // Define mixin for common font styles in menu
+  @mixin menu-font {
+    font-family: $myfont;
+    font-size: 19px;
+  }
+  
+  // Define mixin for common checkbox styles
+  @mixin checkbox {
+    display: flex;
+    margin: auto;
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.9s ease-in-out;
+  
+    i {
+      margin: auto;
+      color: $newbuttoncolor;
+    }
+  }
