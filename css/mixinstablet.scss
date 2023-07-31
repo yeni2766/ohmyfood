@@ -1,16 +1,40 @@
+@import "variables.css";
+
 // Define common styles for flex containers
 @mixin flex-container {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  // Define mixin for common font family and weight
-  @mixin font-style {
+  @mixin font {
     font-family: $myfont;
+  }
+  // Define mixin for common font family and weight
+  @mixin font-header {
+    font-family: $logofont;
     font-weight: $boldfont;
   }
+  @mixin menu-extra {
+    @include font;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+  }
+  @mixin menus-header {
+    width: 100%;
+    height: 250px;
+    position: relative;
   
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   // Define mixin for common gradient button styles
   @mixin gradient-button {
     border-radius: 30px;

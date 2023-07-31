@@ -150,15 +150,6 @@ button:hover {
 }
 
 @media screen and (max-width: 767px) {
-  .menu-extra {
-    position: relative;
-    bottom: 10px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    transition: all 0.3s ease;
-  }
   html,
   body {
     padding: 0;
@@ -362,7 +353,6 @@ button:hover {
   }
   #menu .top-menu {
     display: flex;
-    align-items: center;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -531,16 +521,6 @@ button:hover {
     height: 100%;
     background-color: #eaeaea;
   }
-  .menu-extra {
-    font-family: "Roboto", sans-serif;
-    position: relative;
-    bottom: 15px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    transition: all 0.3s ease;
-  }
   nav {
     display: flex;
     flex-direction: column;
@@ -566,6 +546,7 @@ button:hover {
     height: 50px;
     border-top: 5px solid #cfcfcf;
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     display: inline;
   }
   nav .nav-section.location span {
@@ -605,6 +586,7 @@ button:hover {
     flex-direction: column;
     background-color: #f6f6f6;
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     height: 270px;
     width: 100%;
     box-sizing: border-box;
@@ -617,6 +599,7 @@ button:hover {
     text-align: center;
     max-width: 300px;
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     font-weight: 300;
     font-size: 18px;
     margin-top: 30px;
@@ -625,7 +608,7 @@ button:hover {
   header button {
     border-radius: 30px;
     border: none;
-    background: linear-gradient(#ff79da, #9356dc);
+    background: linear-gradient(#ffa133, #ff5733);
     padding: 15px 25px;
     color: white;
     font-weight: bold;
@@ -648,6 +631,7 @@ button:hover {
   }
   #restaurants h2 {
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     margin-left: 20px;
   }
   #restaurants .restaurant-card-wrapper {
@@ -676,6 +660,7 @@ button:hover {
     background-color: #99e2d0;
     padding: 7px 30px;
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     color: #0a8d6d;
   }
   #restaurants .restaurant-cards img {
@@ -692,6 +677,7 @@ button:hover {
   }
   #restaurants h3 {
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
     margin-left: 20px;
   }
@@ -701,6 +687,17 @@ button:hover {
     width: 5%;
     border-bottom: 3px solid #99e2d0;
     padding-top: 5px;
+  }
+  #restaurants .menu-extra {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
   }
   footer {
     width: 100%;
@@ -715,6 +712,7 @@ button:hover {
   }
   footer h4 {
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     color: white;
   }
   footer ul {
@@ -727,6 +725,7 @@ button:hover {
     text-decoration: none;
     color: white;
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
   }
   footer li {
     margin-top: 5px;
@@ -771,7 +770,7 @@ button:hover {
   #menu .btn-container .order-btn {
     border-radius: 30px;
     border: none;
-    background: linear-gradient(#ff79da, #9356dc);
+    background: linear-gradient(#ffa133, #ff5733);
     padding: 15px 25px;
     color: white;
     font-weight: bold;
@@ -811,15 +810,15 @@ button:hover {
     transform: scale(2);
   }
   #menu h1 {
-    font-family: "Shrikhand", cursive;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     margin-top: 30px;
-    margin-left: 25px;
+    margin-left: 20px;
     font-size: 25px;
-    flex: 1; /* This will make the header take all available space */
   }
   #menu h3 {
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
     margin-left: 20px;
   }
@@ -886,6 +885,7 @@ button:hover {
     left: 30px;
     transition: all 0.7s ease;
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
   }
   #menu .menu-courses .entrees-card .box-contents .box-contents.right .checklist {
     display: flex;
@@ -921,7 +921,19 @@ button:hover {
   }
   #menu h4 {
     font-family: "Roboto", sans-serif;
+    font-weight: 700;
     position: relative;
+  }
+  #menu .menu-extra {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1017,7 +1029,7 @@ button:hover {
   header button {
     border-radius: 30px;
     border: none;
-    background: linear-gradient(#ff79da, #9356dc);
+    background: linear-gradient(#ffa133, #ff5733);
     padding: 15px 25px;
     color: white;
     font-weight: bold;
@@ -1336,4 +1348,4 @@ button:hover {
     text-overflow: ellipsis;
     transition: all 0.3s ease;
   }
-}/*# sourceMappingURL=restaurantmenu.css.map */
+}/*# sourceMappingURL=restaurantsmenu.css.map */

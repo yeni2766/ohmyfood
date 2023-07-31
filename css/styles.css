@@ -1,3 +1,4 @@
+@import "variables.css";
 body {
   box-sizing: border-box;
   margin: 0;
@@ -95,6 +96,22 @@ a {
   animation-delay: 2s;
 }
 
+.entrees-card {
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+  cursor: pointer;
+}
+
+.entrees-card.main-dish {
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.entrees-card.dessert-card {
+  opacity: 0; /* Initially hide the cards */
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
 button {
   transition: all 0.3s ease-in;
   cursor: pointer;
@@ -119,7 +136,7 @@ button:hover {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.3s ease-in-out;
-  animation: fadeOut 3s ease-in-out forwards; /* Animation to fade out the spinner */
+  animation: fadeOut 1s ease-in-out forwards; /* Animation to fade out the spinner */
 }
 
 .spinner {
@@ -158,7 +175,7 @@ button:hover {
     display: flex;
     flex-direction: column;
   }
-  nav .nav-section.location {
+  nav.location {
     justify-content: center;
     align-items: center;
     background-color: #eaeaea;
@@ -169,18 +186,24 @@ button:hover {
     font-weight: 700;
     display: inline;
   }
-  nav .nav-section.location span {
-    display: inline;
-    text-align: center;
-    position: relative;
-    top: 15px;
-  }
-  nav .nav-section.logo-section {
+  nav .nav-section.location {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
-    padding: 5px;
+    flex-direction: row;
+    position: relative;
+    top: 15px;
+    background-color: #eaeaea;
+    width: 100%;
+    height: 50px;
+    border-top: 5px solid #cecece;
+  }
+  nav .logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding-top: 20px;
     background-color: white;
   }
   nav .arrow {
@@ -197,6 +220,7 @@ button:hover {
   }
   nav .area {
     margin-right: 30px;
+    font-weight: bold;
   }
   header {
     display: flex;
@@ -572,16 +596,16 @@ button:hover {
     margin: auto;
     color: #99e2d0;
   }
-  #menu .menu-courses .entrees-card:hover .checklist {
+  #menu .menu-courses .entrees-card:hover .checklist, #menu .menu-courses .entrees-card:active .checklist {
     transform: translateX(-55px);
   }
-  #menu .menu-courses .entrees-card:hover .prices {
+  #menu .menu-courses .entrees-card:hover .prices, #menu .menu-courses .entrees-card:active .prices {
     transform: translateX(-50px);
   }
-  #menu .menu-courses .entrees-card:hover .tick {
+  #menu .menu-courses .entrees-card:hover .tick, #menu .menu-courses .entrees-card:active .tick {
     transform: rotate(360deg);
   }
-  #menu .menu-courses .entrees-card:hover .menu-extra {
+  #menu .menu-courses .entrees-card:hover .menu-extra, #menu .menu-courses .entrees-card:active .menu-extra {
     width: 200px;
   }
   #menu h4 {

@@ -8,6 +8,15 @@
 
 
 @media screen and (max-width: $mobile) {
+  .menu-extra {
+    position: relative;
+    bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+  }
 html,
 body {
 @include html-body-mobile;
@@ -87,6 +96,10 @@ h2 {
 footer {
   @include common-styles-footer;
 }
+#menus-header {
+@include menus-header;
+}
+
 #menu{
 @include common-styles-menu;
 }
@@ -99,7 +112,9 @@ footer {
 html, body {
 @include html-body-mobile;
 } 
-
+.menu-extra {
+  @include menu-extra;
+}
 // Define common styles for nav
 nav {
   @include common-styles-nav;
@@ -118,7 +133,7 @@ nav {
       width: 100%;
       height: 50px;
       border-top: 5px solid $bordertop;
-      @include font-style;
+      @include font;
       display: inline;
 
       span {
@@ -161,7 +176,7 @@ header {
   @include flex-container;
   flex-direction: column;
   background-color: $headercolour;
-  @include font-style;
+  @include font;
   height: 270px;
   width: 100%;
   box-sizing: border-box;
@@ -174,7 +189,7 @@ header {
   p {
     text-align: center;
     max-width: 300px;
-    @include font-style;
+    @include font;
     font-weight: 300;
     font-size: 18px;
     margin-top: 30px;
@@ -199,7 +214,7 @@ header {
   margin-top: 50px;
 
   h2 {
-    @include font-style;
+    @include font;
     margin-left: 20px;
   }
 
@@ -221,7 +236,7 @@ header {
     right: 15px;
     background-color: $newbuttoncolor;
     padding: 7px 30px;
-    @include font-style;
+    @include font;
     color: $newbuttontitlecolor;
   }
 
@@ -239,7 +254,7 @@ header {
   }
 
   h3 {
-    @include font-style;
+    @include font;
     text-transform: uppercase;
     margin-left: 20px;
 
@@ -252,16 +267,6 @@ header {
     }
   }
 
-  .menu-extra {
-    @include font-style;
-    position: relative;
-    bottom: 15px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    transition: all 0.3s ease;
-  }
 }
 
 // Define common styles for footer
@@ -275,7 +280,7 @@ footer {
   margin: 0;
 
   h4 {
-    @include font-style;
+    @include font;
     color: white;
   }
 
@@ -289,7 +294,7 @@ footer {
   a {
     text-decoration: none;
     color: white;
-    @include font-style;
+    @include font;
   }
 
   li {
@@ -376,16 +381,19 @@ footer {
       transform: scale(2);
     }
   }
+  
 
   h1 {
-    @include font-style;
+    @include font-header;
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left:25px;
     font-size: 25px;
+    flex: 1; /* This will make the header take all available space */
+
   }
 
   h3 {
-    @include font-style;
+    @include font;
     text-transform: uppercase;
     margin-left: 20px;
 
@@ -426,7 +434,7 @@ footer {
         width: 100%;
         height: 80px;
         overflow: hidden;
-
+        
         h4 {
           @include menu-font;
         }
@@ -454,7 +462,7 @@ footer {
             top: 30px;
             left: 30px;
             transition: all 0.7s ease;
-            @include font-style;
+            @include font;
           }
 
           .checklist {
@@ -487,20 +495,11 @@ footer {
   }
 
   h4 {
-    @include font-style;
+    @include font;
     position: relative;
   }
 
-  .menu-extra {
-    @include font-style;
-    position: relative;
-    bottom: 15px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    transition: all 0.3s ease;
-  }
+
 }
 }
 

@@ -118,7 +118,17 @@ display: inline;
     box-shadow: $buttonshadow;
     margin-top: 20px;
   }
+  @mixin menus-header {
+    width: 100%;
+    height: 250px;
+    position: relative;
   
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   // Mixin for common styles of h2
   @mixin common-styles-h2 {
     font-family: $myfont;
@@ -202,6 +212,7 @@ display: inline;
   
     .top-menu {
       display: flex;
+      align-items: center;
       flex-direction: row;
       justify-content: space-between;
   
@@ -369,15 +380,15 @@ display: inline;
           }
         }
   
-        &:hover .box-contents.right {
+        &:hover .box-contents.right, &:active .box-contents.right{
           transform: translateX(-0%);
         }
   
-        &:hover .tick {
+        &:hover .tick, &:active .tick{
           transform: rotate(360deg);
         }
   
-        &:hover .menu-extra {
+        &:hover .menu-extra, &:active .menu-extra{
           width: 90%;
         }
       }

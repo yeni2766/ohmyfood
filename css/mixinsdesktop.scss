@@ -9,7 +9,7 @@
   @mixin gradient-button {
     border-radius: 30px;
     border: none;
-    background: linear-gradient(#ffa133, #ff5733);
+    background: linear-gradient($secondary, $primary);
     padding: 15px 25px;
     color: white;
     font-weight: bold;
