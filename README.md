@@ -33,7 +33,7 @@ Fade-in Effects: Elements like cards and sections fade in gracefully when the pa
 Responsive Design: The website is designed to be responsive, ensuring optimal viewing across different devices and screen sizes.
 Colour Palette: A modern colour palette is used, combining subtle shades with vibrant accents for a visually appealing look.
 
-#Website 
+# Website 
 Go <a href = 'https://yeni2766.github.io/ohmyfood/'>here</a> to see the website
 
 
